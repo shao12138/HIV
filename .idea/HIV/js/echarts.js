@@ -7,9 +7,6 @@ $(function () {
     ceshis4();
     ceshis5();
 
-
-
-
     function ceshis1() {
         var myChart = echarts.init(document.getElementById('chart2'));
 
@@ -1174,7 +1171,6 @@ $(function () {
             myChart.resize();
         });
     }
-
     function ceshis5() {
         var myChart = echarts.init(document.getElementById('map'));
 
@@ -1183,8 +1179,6 @@ $(function () {
         //console.log(uploadedDataURL);
 // echarts.extendsMap = function(id, opt) {
 //     // 实例
-
-
 //     var cityMap = {
 //         "郑州市": zhengzhou,
 //         "开封市": kaifeng,
@@ -1924,11 +1918,6 @@ $(function () {
             myChart.resize();
         });
     }
-
-
-
-
-
     function ceshis7() {
         var myChart = echarts.init(document.getElementById('chart_1'));
 
@@ -1939,6 +1928,4 @@ $(function () {
             myChart.resize();
         });
     }
-
-
 });
