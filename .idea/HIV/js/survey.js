@@ -1,546 +1,15 @@
 $(function () {
+    ceshis8();
+    ceshis6();
     ceshis1();
     ceshis2();
     ceshis3();
     ceshis4();
     ceshis5();
-    ceshis6();
-    ceshis();
-
-    function ceshis() {
-        var myChart = echarts.init(document.getElementById('shuiipin'));
-
-        var img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAYAAACJm/9dAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+IEmuOgAAE/9JREFUeJztnXmQVeWZxn/dIA2UgsriGmNNrEQNTqSio0IEFXeFkqi4kpngEhXjqMm4MIldkrE1bnGIMmPcUkOiIi6gJIragLKI0Songo5ZJlHGFTADaoRuhZ4/nnPmnO4+l+7bfc85d3l+VV18373n3Ptyvve53/5+da1L6jDdYjgwBhgNHALMBn6Sq0VdcxlwGvACsAx4HliTq0VlRlNzY+LrfTO2o5LoDxwOHAmMA/4WiP+KzM3DqCJpAA4K/i4F2oBXgWbgWWAxsDEv48oZC6M9Q4EJwInAMcDAfM0pOXXA14K/y4FPgQXAfOBxYF1+ppUXFgYMBiYCp6PaoU+B694HFqEmyVJgVSbW9Y6bgCeBb6Am4GHALrH3B6L/+0RgM6pFHgQeAzZkaWi5UVejfYx64AjgXOAk1OToSCtqajyFHGZlVsalzH7oB+BYJJR+Cde0oKbi3cBCYEtWxmVNoT5GrQljGHAecD7wxYT3P0bNirlIEB9lZ1ouDEICOQk1H7dLuOYt4C7gZ8Da7EzLhloXxv7AJcCZdK4dWpAIHkDt7FrtjA5A/aszkFiSntP9wAzgP7M1LT0KCaM+YzuyZixy+leAb9O+sN9AHdDd0S/mbGpXFKD/+2z0LHZHz+aN2PsN6Bm+gjrsY7M2MEuqVRhHoU7yYjS6FPI5MAc4FNgHzUN4JKYz69Cz2Qc9qzno2YUcjZ7t8iBddVSbMEYDzwFPA6Nir28Afgx8CZiERpVM91iKntnfoGcYH606BNUez6GRr6qhWoSxF/AoKsQxsdfXAj9AHe2rgNXZm1Y1/A96hl8E/pn2HfExwBJUBntlb1rpqXRhbA/cDLyGxuJDPgSuBPYErqPGx+RLzAagCT3bK9GzDpmIyuJmVDYVS6UKow74e+APwPeIxuI/AX6Emkw3opldkw6fome8F3rmnwSv90Nl8gdURhU57FmJwtgHdfx+jpZwgCag7gW+DFyDa4gsWY+e+ZdRGYSTgUNRGS1GZVZRVJIwtgF+iMbQ4/2IF4ADgHOA93Kwy4j3UBkcgMokZAwqsx+iMqwIKkUYI4AXgelEzab1wAVoNOSVnOwynXkFlckFqIxAZTYdleGInOwqinIXRh1wMfASMDL2+hxgb+BOqngdTwWzBZXN3qisQkaisryYMu97lLMwhgHzgJ+ivRGgIcJJwd8HOdllus8HROUVDu/2R2U6D5VxWVKuwjgEVcnjY689jqrhOYl3mHJmDiq7x2OvjUdlfEguFnVBOQrju2gmdbcgvwmYitbweFtm5bIGleFUVKagMn4OlXlZUU7C6A/MQqs3w9GLN4ADgZloW6apbNpQWR5ItEBxG1Tms4iazLlTLsLYCW2IOTv22iNor3Il7JQzxbEKle0jsdfORj6wUy4WdaAchDEC+A1RW3MzcAVwKtW/UaiW+QiV8RWozEE+8Bu0yzBX8hbGwaiNuUeQ/xi1Q2/CTadaoA2V9Umo7EG+8Dw57/fIUxhHAs8AOwb5t9Cy8fm5WWTyYj4q+7eC/PZoOfspeRmUlzBOBn4FbBvkX0XVaLUEHDDFsxL5wG+DfAOKWHJOHsbkIYwpaAtluLRjEdol5nVO5j20tmpRkO+DAjFclLUhWQvjUhSSJYzdNA84DneyTcRHyCfmBfk64HYUbjQzshTGVOBWojUys9GoREuGNpjKoAX5xuwgXwfcQoY1R1bCmILWx4SimAWcBXyW0febyuMz5COzgnxYc0zJ4suzEMZEFKwrFMVDKAzL5oJ3GCM2I195KMjXIV86Ke0vTlsYR6CRhbBPMReYjEVhus9mNCseRpfvg5pYR6T5pWkKYz8UNSIcfVqIzmpoTfE7TXXyGfKdhUG+H/Kt1GbI0xLGMODXKJI4aIz6m1gUpue0Ih8Kw4MORj6Wyp6ONITRADyBwjyC4hEdjwMUmN6zAUU+fDPI7458LSlafa9IQxh3oZWToP/ICcDbKXyPqU3WouDT4Q/tQcjnSkqphXEJ6lyDOk2T8TIPU3pW0n4QZzLyvZJRSmGMQislQ65C1ZwxafAEioQYchPt4xX3ilIJYygaaw5HoB5BM5XGpMmtwMNBuh/ywaGFL+8+pRBGHYpAF+7R/h2anfR+CpM2bWj1bbhNdjfki70OzVMKYVxEFM1jE955Z7Il3AkYHvoznhKsqeqtML6KIluHfB93tk32rEK+F3Iz8s0e0xth9EXVVhjZ4QkUAcKYPPg3orhV/YH76MVx3b0RxhXA3wXpdehoYPcrTF60oRN5w6PjDkQ+2iN6Kox9UOj3kAtxMDSTP2uQL4ZcA+zbkw/qiTDqULUVTsM/RDRkZkzePEy0TL0B+WrRo1Q9Eca3iEKbrKfEM47GlIBLgP8N0mPQyU5FUawwdqDz7Lajjpty4wPg6lj+RqIwTd2iWGE0Ei3zXUEKi7eMKRF3IR8F+ew1W7m2E8UI4ytEEydbUIRqH9piypWOPnoR8uFuUYwwbiKKQj4LeLmIe43Jg5eJgilsQ/tuwFbprjBGEy37+IT27TdjypmriY5aHo/OB+yS7grjulj6JzhqoKkc3gNui+X/pTs3dUcYRxMNz/4FLyc3lcfNyHdBvnxMVzd0RxiNsfQNeO+2qTw2IN8N6XKEqithjCXaFbUWuKNndhmTOzOJ1lGNoovzN7oSxrRY+jbg057bZUyu/BX1j0OmFboQti6Mkah/AVr64SXlptKZiXwZ5NsjC124NWFcGkvfHftAYyqV9bRfrXFpoQvrWpckLjwcigKl9Qc+B74ErC6hgcbkxR7Af6NNTK3Abk3Njes6XlSoxvgO0c68R7EoTPWwGvk0KLLIBUkXJQmjHu3GC5lRWruMyZ24T58zbdy1nXSQJIxxwJ5B+nVgWentMiZXliHfBvn6kR0vSBJG/JTMu0tvkzFlQdy3O53S1LHzPRht8mhA56DtTjQpYkw1MQR4h8jXd25qbvz/kdeONcZEor3cT2FRmOrlQ3S+Bsjn2x1f1lEYZ8TSD6RolDHlwP2x9JnxN+JNqWHAu2h892NgZ7wExFQ3A4H3ge3QkQK7NjU3roH2NcaJRJHb5mNRmOrnU+TroEMvw8147YQxIZaeizG1QdzXTwwTYVNqAOpoD0Q99GGoOWVMtTMIRTBsQBHThzQ1N24Ma4zDkCgAFmNRmBqhqbnxI+C5IDsAOByiplR85m9BhnYZUw48FUsfCcnCeCYzc4wpD+I+Pw7UxxiOhqzq0HDtbgk3GlOVNDUrpMG0cde+A+yKjhPYuR7F2QknM57PxTpj8ifsZ9QBh9ajYGohS7O3x5iyIL6KfFQ9cHDsBQvD1Cpx3z+4LzAHnV3Whg75M6YWWQVciZpSrYX2fBtTE4Sd746U4pxvY6oOC8OYBCwMYxKwMIxJwMIwJgELw5gELAxjErAwjEnAwjAmAQvDmAQsDGMSsDCMScDCMCYBC8OYBCwMYxKwMIxJwMIwJgELw5gELAxjErAwjEnAwjAmAQvDmAQsDGMSsDCMScDCMCYBC8OYBCwMYxKwMIxJwMIwJgELw5gELAxjErAwjEnAwjAmAQvDmAQsDGMSsDCMScDCMCYBC8OYBCwMYxLoC1wKNABtwC3A5lwtMiYHpo27tg/wPaAOaO0LnAqMCt5fAPw2J9uMyZMRwI+D9PJ6YEXszW9kb48xZUHc91fUA8sKvGlMLTE6ll5eDyxF/QuAMdnbY0xZMDb4tw1YUg+sAVYGL+6K2lrG1AzTxl07Avk+wMqm5sY14XBtc+y6o7I1y5jcift8M0TzGM/E3jgmM3OMKQ+OjaWfBahrXVIHMABYBwwEWoBhwMdZW2dMDgxC3YkGYCMwpKm5cWNYY2wEng7SDcBx2dtnTC4ci3weYEFTc+NGaL8k5IlY+qSsrDImZ+K+/qsw0VEYnwfpE1GzyphqZgDyddBSqMfDN+LCWAssCtLbAeMzMc2Y/DgB+TrAwqbmxjXhGx1X194fS5+WtlXG5MyZsfQD8Tc6CmMuGpUCOB4YkqJRxuTJEOTjIJ9/LP5mR2GsR+IA9dS/lappxuTHZKLRqLlNzY3r428mbVS6N5Y+Ny2rjMmZuG/f2/HNJGE8C7wZpPel/apDY6qB0cBXg/SbBLPdcZKEsQW4J5a/pORmGZMvcZ++p6m5cUvHCwrt+f53ok74N4E9SmyYMXmxB/JpgFbk650oJIx1wOwg3Rf4bklNMyY/LkY+DfBgU3PjuqSLthYl5LZY+lxg+xIZZkxeDAbOi+VvK3Th1oTxCtHCwu2BC3tvlzG5chHRD/wzyMcT6SquVFMsfRleP2Uql4HIh0Ou39rFXQnjOWB5kB4GTO25XcbkylTkwyCfXrSVa7sViXB6LH0VaqcZU0kMRr4b8qOubuiOMBagmgNgR+Dy4u0yJle+j3wX5MtPdXVDd2PX/iCWvhzYpTi7jMmNXVAY2pAfFLowTneFsZRoh9+2dNFxMaaMuB75LMiHl3bnpmKinf8T8FmQngwcUMS9xuTBAchXQb57RXdvLEYYvwNmxu77aZH3G5MlHX10JvBGMTcXw3S0BRbgYNrPIhpTTpyHfBS0xGn6Vq7tRLHC+AtqUoVcD+xU5GcYkzbDad8PvgL5brfpSVPoP4iGb3cA/rUHn2FMmsxAvgnwPPDzYj+gJ8JoQ+umwmXppwGn9OBzjEmDU4gCebQgX20rfHkyPe08/xft22wzUfVlTJ4MB+6I5acDr/fkg3ozqnQj8FKQHgbchc4vMyYP6pAPhj/QLyMf7RG9EcbnwLeBTUF+Al6abvLjQuSDoCbUPxBF1iya3s5DvEb7SZNbgP16+ZnGFMsI4OZY/irkmz2mFBN0twPzg3R/YA4KrW5MFgxCPjcgyD9JCUZKSyGMNmAK8E6Q/wqK0+P+hkmbOhTRZu8g/w5qQhU9CtWRUi3pWIuGyFqD/MnoMHFj0uRyoqmCVuSDawpf3n1KudZpGe1nxW/AEdNNeownOrAe5HvLClxbNKVeBDgD+EWQ7gPMwp1xU3r2Q77VJ8j/AvleyUhjdex5wItBejA6pWb3FL7H1CbD0AEv4RbrF0lhMWsawtiExpPfDvJfAH6N94qb3jMYhXTaM8i/jXxtU6Ebekpa+ynWoLMHNgT5/YBHgX4pfZ+pfvohH9o/yG9APlaSznZH0txotBLFCA1Hqo5AYT8tDlMs2yDfOSLItyLfWpnWF6a9A28hcBY6+A90Qma802RMV/RBnevwdNXN6IiwhWl+aRZbUx8GvkM06TIJuA+Lw3RNH+Qrk4J8G3A+8EjaX5zVnu170JkEoTgmA79EVaQxSWyDaoowmEEb8qFOpx+lQZbBDG5HM5WhOE4DHsJ9DtOZfsg3Tg/ybSho2u1ZGZB1lI/bUFUY73M8hRcdmohBaCFg2KdoQ+ez3JqlEXmEv7mb9uuqDkd7yB3d0OyMfCEcfdqMfkjvKHhHSuQVF+oR4ETgr0F+fxSB2stHapcRwAtE8xQtwBnohzRz8gyY9gxwJFFYkz3RIrAT8jLI5MYJ6IdxzyC/HjgO7bPIhbwjCa4ADgNWB/ntgHlopaT3c1Q/dahTPQ+VPcgXxtLF+RVpk7cwQLOXB6FqFDR2fSPeCVjthDvvbiKa01qBfOHVvIwKKQdhALyPOly/jL12Mlo5OSIXi0yajEBle3LstfvRQMz7uVjUgXIRBmiF5NnAPxJFVd8bhei5CDetqoE6VJYvEW1H/QyV+VmksEq2p5STMEJmoF+OcA95fzRcNxcHdatkhqMyvAOVKaiMD6PEm4xKQTkKAzQ6NRJtcgqZgPojp+ZikekNp6CymxB7bT4q4+WJd+RMuQoDFGBhPKpmwyp2OFoqMBtHWa8EhgMPok52WNtvQjPZE4iOlCg7ylkYoOUAM4ADaX9Y+SQUP/d8yv//UIvUo7J5gyjAMqgMD0Rrnnod4iZNKsWpVqFhvEaipSQ7AHcCS1CVbMqDkahM7iQKxd+Kyu4gVJZlT6UIAzR6MZ3owYeMQgF878HrrfJkF1QGL6MyCQl/uKYTjTaWPZUkjJDX0czoFHSEFOj/MQX4PXAtDryQJYPRM/89KoPQp9YF+bH0MBR/nlSiMEDt0/vQWPhMoqjW2wLXAH9Ey0oG5mJdbTAQPeM/omceHhn8OSqTfVAZlXVfohCVKoyQD4GpwNdQiJ6QoWhZyZ+BaXhpSSkZhJ7pn9EzHhp770lUFlOJavOKpNKFEfI6WqF5KO37H8OB69DCtBtQjCvTM76ADnxcjZ5pfLJ1CXr2x1OBzaYkqkUYIUuBMcAxRIsSQe3gK4E/oTmQ0dmbVrGMRs/sT+jciXj/bQVwLHrmS7M3LT2qTRghT6ORkcODdEhfNAeyFB0schmwY+bWlT9D0LN5DT2rSejZhTyNnu0hwILMrcuAahVGyGJUe3wdHWnbEntvX7SP+F3gMbTUZAC1ywAkgMfQGqZb0TMKaUHP8OvomS7O1rxsqWtdUlOLVoejGdnzgD0S3v8IreGZi4I0fJydabmwHWoKTUR9tKRBitXo0MefkVI4zDxpam5MfL3WhBFSj/Z/nI/W7DQkXNOCdpE9jbbhVsSMbTcYARwFHI2aQ4X+748jQTQDWzKzLmMKCaNv4qvVzxbg2eBve/SLeTowjmg3WQP6NT02yL+Lmg/Lgr9VRGGAypU+SAijg7/DgF0LXLsZiWA2Cp68PgP7ypZarTEKMQzVIOPRr+rWJgivRkPA5cxVaIi1EJ+i2vAJVEOU7WrXtHCN0T3WovU+96DO6OEoksk4FNqn0n9F2tC+iGZUWy4CNuZqUZliYRRmI5pND2fUd0JDwKPRMGVLgfvKiRa0EegF1PxbDnyQq0UVwv8BNYmwIpIWBvwAAAAASUVORK5CYII=';
-
-        var trafficWay = [{
-            name: '18-27',
-            value: 40
-        }, {
-            name: '45-60',
-            value: 10
-        }, {
-            name: '35-45',
-            value: 30
-        }, {
-            name: '27-35',
-            value: 40
-        }];
-
-        var data = [];
-        var color = ['#00ffff', '#00cfff', '#006ced', '#ffe000', '#ffa800', '#ff5b00', '#ff3000']
-        for (var i = 0; i < trafficWay.length; i++) {
-            data.push({
-                value: trafficWay[i].value,
-                name: trafficWay[i].name,
-                itemStyle: {
-                    normal: {
-                        borderWidth: 5,
-                        shadowBlur: 20,
-                        borderColor: color[i],
-                        shadowColor: color[i]
-                    }
-                }
-            }, {
-                value: 2,
-                name: '',
-                itemStyle: {
-                    normal: {
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        },
-                        color: 'rgba(0, 0, 0, 0)',
-                        borderColor: 'rgba(0, 0, 0, 0)',
-                        borderWidth: 0
-                    }
-                }
-            });
-        }
-        var seriesOption = [{
-            name: '',
-            type: 'pie',
-            clockWise: false,
-            radius: [45, 45],
-            /*hoverAnimation: false,*/
-
-            itemStyle: {
-                normal: {
-                    label: {
-                        show: true,
-                        position: 'outside',
-                        color: '#ddd',
-                        formatter: function (params) {
-                            var percent = 0;
-                            var total = 0;
-                            for (var i = 0; i < trafficWay.length; i++) {
-                                total += trafficWay[i].value;
-                            }
-                            percent = ((params.value / total) * 100).toFixed(0);
-                            if (params.name !== '') {
-                                return '年龄段：' + params.name + '' + '' + '占百分比：' + percent + '%';
-                            } else {
-                                return '';
-                            }
-                        },
-                    },
-                    labelLine: {
-                        length: 30,
-                        length2: 40,
-                        show: true,
-                        color: '#00ffff'
-                    }
-                }
-            },
-            data: data
-        }];
-        option = {
-            /*backgroundColor: '#0A2E5D',*/
-            color: color,
-            title: {
-                text: '年龄段',
-                top: '5%',
-                textAlign: "center",
-                left: "49%",
-                textStyle: {
-                    color: '#fff',
-                    fontSize: 22,
-                    fontWeight: '400'
-                }
-            },
-            graphic: {
-                elements: [{
-                    type: "image",
-                    z: 3,
-                    style: {
-                        image: img,
-                        width: 140,
-                        height: 140
-                    },
-                    left: 'center',
-                    top: 'center',
-                    position: [20, 20]
-                }]
-            },
-            tooltip: {
-                show: false
-            },
-            legend: {
-                icon: "circle",
-                orient: 'horizontal',
-                // x: 'left',
-                data: ['18-27', '45-60', '35-45', '27-35'],
-                right: 80,
-                bottom: 1,
-                align: 'right',
-                textStyle: {
-                    color: "#fff"
-                },
-                itemGap: 20,
-                padding: [5, 20],
-            },
-            toolbox: {
-                show: false
-            },
-            series: seriesOption
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-
-
-        myChart.currentIndex = -1;
-
-        setInterval(function () {
-            var dataLen = option.series[0].data.length;
-            // 取消之前高亮的图形
-            myChart.dispatchAction({
-                type: 'downplay',
-                seriesIndex: 0,
-                dataIndex: myChart.currentIndex
-            });
-            myChart.currentIndex = (myChart.currentIndex + 1) % dataLen;
-            // 高亮当前图形
-            myChart.dispatchAction({
-                type: 'highlight',
-                seriesIndex: 0,
-                dataIndex: myChart.currentIndex
-            });
-        }, 1000);
-        window.addEventListener("resize", function () {
-            myChart.resize();
-        });
-    }
-
-    //亚型比例变化
-    function ceshis1() {
-        var myChart = echarts.init(document.getElementById('chart5'));
-        var xData = (function () {
-            var data = [];
-            for (var i = 1; i < 13; i++) {
-                data.push(i + "月份");
-            }
-            return data;
-        })();
-        option = {
-            backgroundColor: "#152439",
-            tooltip: {
-                axisPointer: {
-                    type: "shadow",
-                    textStyle: {
-                        color: "#fff",
-                    },
-                },
-            },
-            grid: {
-                borderWidth: 0,
-                top: 25,
-                bottom: 17,
-                left: 120,
-                textStyle: {
-                    color: "#fff",
-                },
-            },
-            legend: {
-                icon: "circle",
-                right: "4%",
-                top: "0%",
-                textStyle: {
-                    color: "#90979c",
-                },
-                data: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
-            },
-            calculable: true,
-            xAxis: [
-                {
-                    type: "value",
-                    trigger: "axis",
-                    axisLine: {
-                        lineStyle: {
-                            color: "#fff",
-                        },
-                    },
-                    splitLine: {
-                        show: false,
-                    },
-                    axisTick: {
-                        show: false,
-                    },
-                    splitArea: {
-                        show: false,
-                    },
-                    axisLabel: {
-                        interval: 0,
-                    },
-                    data: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
-                },
-            ],
-            yAxis: [
-                {
-                    type: "category",
-                    splitLine: {
-                        show: false,
-                    },
-                    axisLine: {
-                        lineStyle: {
-                            color: "#fff",
-                        },
-                    },
-                    axisTick: {
-                        show: false,
-                    },
-                    axisLabel: {
-                        interval: 0,
-                    },
-                    splitArea: {
-                        show: false,
-                    },
-                    data: ["01_AE", "07_BC", "B", "BC", "55_01B", "08_BC", "C", "01B"],
-                },
-            ],
-            series: [
-                {
-                    name: "2012",
-                    type: "bar",
-                    stack: "总量",
-                    barMaxWidth: 15,
-                    barGap: "10%",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgba(245,221,111,1)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(245,221,111,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgba(245,221,111,1)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(245,221,111,0)",
-                                },
-                            ]),
-                        },
-                    },
-                    data: [59, 65, 82, 246, 482, 623, 1103, 2158],
-                },
-                {
-                    name: "2013",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgba(24,191,207,1)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(24,191,207,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgba(24,191,207,1)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(24,191,207,0)",
-                                },
-                            ]),
-                        },
-                    },
-                    data: [105, 157, 109, 224, 493, 418, 1064, 3350],
-                },
-                {
-                    name: "2014",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgba(98,113,228,1)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgba(98,113,228,1)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [67, 243, 331, 261, 253, 348, 1638, 1713],
-                }, {
-                    name: "2015",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(0,119,181)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(0,119,181)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [168, 384, 723, 276, 836, 456, 1301, 2648],
-                }, {
-                    name: "2016",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(76,175,80)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(76,175,80)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [52, 69, 161, 168, 102, 136, 729, 1110],
-                }, {
-                    name: "2017",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(103,58,183)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(103,58,183)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [110, 20, 186, 256, 332, 240, 882, 1664],
-                }, {
-                    name: "2018",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(244,67,54)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(244,67,54)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [110, 145, 301, 284, 228, 400, 1488, 1889],
-                }, {
-                    name: "2019",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(248,90,4)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(248,90,4)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [93, 347, 206, 167, 154, 424, 907, 1308],
-                }, {
-                    name: "2020",
-                    type: "bar",
-                    stack: "总量",
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(250,250,252)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
-                                {
-                                    offset: 0,
-                                    color: "rgb(247,248,250)",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "rgba(40,54,117,0)",
-                                },
-                            ]),
-                            barBorderRadius: 0,
-                        },
-                    },
-                    data: [58, 436, 89, 10, 117, 478, 314, 748],
-                },
-            ],
-        };
-        myChart.setOption(option);
-
-    }
+    ceshis7();
 
     //左上
-    function ceshis2() {
+    function ceshis1() {
         var myChart = echarts.init(document.getElementById('chart3'));
         option = {
             "series": [{
@@ -752,493 +221,616 @@ $(function () {
         });
     }
 
-    //中间下-折线图
-    function ceshis3() {
-        var myChart = echarts.init(document.getElementById('chart4'));
-
-        var option = {
-            tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#fff'}}},
-            legend: {
-                icon: 'rect',
-                itemWidth: 14, itemHeight: 5, itemGap: 10,
-                data: ['2019年', '2020年', '2021年', '2022年', '2023年'],
-                right: '10px', top: '0px',
-                textStyle: {fontSize: 12, color: '#fff'}
+    //左中
+    function ceshis2() {
+        var myChart = echarts.init(document.getElementById('chart6'));
+        var labelimg = "";
+        option = {
+            /*backgroundColor: "#0E233E",*/
+            "grid": {
+                "left": "6%",
+                "top": "18%",
+                "right": "3%",
+                "bottom": "15%"
             },
-            grid: {x: 40, y: 50, x2: 45, y2: 40},
-            xAxis: [{
-                type: 'category',
-                boundaryGap: false,
-                axisLine: {lineStyle: {color: '#57617B'}},
-                axisLabel: {textStyle: {color: '#fff'}},
-                data: [
-                    "腊月初7",
-                    "腊月初8",
-                    "腊月初9",
-                    "腊月初10",
-                    "腊月初11",
-                    "腊月初12",
-                    "腊月初13",
-                    "腊月初14",
-                    "腊月初15",
-                    "腊月初16",
-                    "腊月初17",
-                    "腊月初18",
-                    "腊月初19",
-                    "腊月初20",
-                    "腊月初21",
-                    "腊月初22",
-                    "腊月初23",
-                    "腊月初24",
-                    "腊月初25",
-                    "腊月初26",
-                    "腊月初27",
-                    "腊月初28",
-                    "腊月初29",
-                    "腊月初30",
-                    "正月初1",
-                    "正月初2",
-                    "正月初3",
-                    "正月初4",
-                    "正月初5",
-                    "正月初6",
-                    "正月初7",
-                    "正月初8",
-                    "正月初9",
-                    "正月初10",
-                    "正月初11",
-                    "正月初12",
-                    "正月初13",
-                    "正月初14",
-                    "正月初15",
-                    "正月初16",
-                    "正月初17",
-                    "正月初18",
-                    "正月初19",
-                    "正月初20",
-                    "正月初21",
-                    "正月初22",
-                    "正月初23",
-                    "正月初24",
-                    "正月初25",
-                    "正月初26",
-                    "正月初27",
-                    "正月初28",
-                    "正月初29",
-                    "正月初30",
-                    "二月初1",
-                    "二月初2",
-                    "二月初3",
-                ]
-            }],
-            yAxis: [{
-                type: 'value',
-                axisTick: {
-                    show: false
-                },
-                axisLine: {lineStyle: {color: '#57617B'}},
-                axisLabel: {margin: 10, textStyle: {fontSize: 12}, textStyle: {color: '#fff'}, formatter: '{value}'},
-                splitLine: {lineStyle: {color: '#57617B'}}
-            }, {
-                type: 'value',
-                axisTick: {
-                    show: false
-                },
-                axisLine: {lineStyle: {color: '#57617B'}},
-                axisLabel: {margin: 10, textStyle: {fontSize: 12}, textStyle: {color: '#fff'}, formatter: '{value}'},
-                splitLine: {show: false, lineStyle: {color: '#57617B'}}
-            }],
-            series: [{
-                name: '2019年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
-                yAxisIndex: 0,
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(185,150,248,0.3)'
-                        }, {
-                            offset: 0.8,
-                            color: 'rgba(185,150,248,0)'
-                        }], false),
-                        shadowColor: 'rgba(0, 0, 0, 0.1)',
-                        shadowBlur: 10
-                    }
-                },
-                itemStyle: {normal: {color: '#B996F8'}},
-                data: [
-                    "353.7092772",
-                    "312.9795936",
-                    "333.7403148",
-                    "304.6864896",
-                    "311.8322448",
-                    "323.6503716",
-                    "338.8797",
-                    "372.6619488",
-                    "345.076848",
-                    "366.9401088",
-                    "367.8382044",
-                    "389.247606",
-                    "405.4737204",
-                    "436.0823892",
-                    "502.639344",
-                    "495.849114",
-                    "513.5867532",
-                    "490.7215872",
-                    "490.6611612",
-                    "493.986762",
-                    "530.0219448",
-                    "527.0810292",
-                    "488.5993548",
-                    "414.3138012",
-                    "342.6116616",
-                    "545.0786136",
-                    "591.068988",
-                    "606.2593068",
-                    "637.1947296",
-                    "726.2124984",
-                    "687.9075336",
-                    "597.5534592",
-                    "563.8972788",
-                    "505.580616",
-                    "469.952766",
-                    "487.8620604",
-                    "445.0947084",
-                    "415.8890568",
-                    "345.338802",
-                    "395.8886016",
-                    "431.404866",
-                    "412.1937396",
-                    "463.749948",
-                    "478.0189404",
-                    "368.9358516",
-                    "327.3258924",
-                    "364.208724",
-                    "417.344238",
-                    "355.913676",
-                    "394.2562572",
-                    "353.2459572",
-                    "362.2391928",
-                    "315.1831824",
-                    "299.6386668",
-                    "300.7750968",
-                    "338.5533672",
-                    "376.5856536",
+            "legend": {
+                "data": [
+                    "四川",
+                    "广西",
+                    "云南",
+                    "广东",
+                    "河南",
+                    "重庆",
+                    "湖南"
                 ],
-            }, {
-                name: '2020年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
-                yAxisIndex: 0,
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(3, 194, 236, 0.3)'
-                        }, {
-                            offset: 0.8,
-                            color: 'rgba(3, 194, 236, 0)'
-                        }], false),
-                        shadowColor: 'rgba(0, 0, 0, 0.1)',
-                        shadowBlur: 10
-                    }
+                "top": "92%",
+                "icon": "circle",
+                "textStyle": {
+                    "color": "#0DCAD2"
+                }
+            },
+            "color": [
+                "#534EE1",
+                "#ECD64F",
+                "#00E4F0",
+                "#44D16D",
+                "#124E91",
+                "#BDC414",
+                "#C8CCA5"
+            ],
+            "tooltip": {
+                "position": "top",
+            },
+            "xAxis": {
+                "type": "category",
+                "data": [
+                    "四川",
+                    "广西",
+                    "云南",
+                    "广东",
+                    "河南",
+                    "重庆",
+                    "湖南"
+                ],
+                "axisLabel": {
+                    "show": false,
+                    "color": "#999999",
+                    "fontSize": 16
                 },
-                itemStyle: {normal: {color: '#03C2EC'}},
-                data: [
-                    "266.8720608",
-                    "251.204328",
-                    "397.885122",
-                    "448.8799356",
-                    "420.7530096",
-                    "398.7199404",
-                    "401.682078",
-                    "447.0274008",
-                    "497.460042",
-                    "438.973668",
-                    "481.0020084",
-                    "446.3765172",
-                    "436.1630004",
-                    "412.6136436",
-                    "431.4138732",
-                    "450.4974408",
-                    "479.9456712",
-                    "529.5260304",
-                    "525.4227648",
-                    "542.3144724",
-                    "621.2109996",
-                    "580.6973268",
-                    "551.6447328",
-                    "448.30989",
-                    "261.5466672",
-                    "287.4244176",
-                    "264.7354104",
-                    "225.8917632",
-                    "192.6017028",
-                    "183.7748412",
-                    "153.6096312",
-                    "130.643928",
-                    "142.4592036",
-                    "117.190152",
-                    "85.9585284",
-                    "81.3802464",
-                    "81.188244",
-                    "85.798116",
-                    "94.7500092",
-                    "111.1956336",
-                    "100.9839312",
-                    "74.7511092",
-                    "71.3811852",
-                    "73.1563812",
-                    "73.4141556",
-                    "70.6802436",
-                    "73.5190992",
-                    "92.2017168",
-                    "96.6906396",
-                    "105.1612632",
-                    "114.5071728",
-                    "125.7085332",
-                    "144.2585376",
-                    "",
-                    "153.7678404",
-                    "174.826512",
-                    "176.0520096"
-                ]
-            }, {
-                name: '2021年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
-                yAxisIndex: 1,
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(218, 57, 20, 0.3)'
-                        }, {
-                            offset: 0.8,
-                            color: 'rgba(218, 57, 20, 0)'
-                        }], false),
-                        shadowColor: 'rgba(0, 0, 0, 0.1)',
-                        shadowBlur: 10
-                    }
+                "axisTick": {
+                    "show": false
                 },
-                itemStyle: {normal: {color: '#DA3914'}},
-                data: [
-                    "232.7756616",
-                    "230.016024",
-                    "233.3630412",
-                    "235.0945944",
-                    "259.4474064",
-                    "235.2896424",
-                    "258.7597812",
-                    "248.1890868",
-                    "279.7580592",
-                    "242.2203264",
-                    "203.4094356",
-                    "220.6766268",
-                    "179.8170516",
-                    "247.2565176",
-                    "215.67303",
-                    "214.9407252",
-                    "223.078698",
-                    "240.5989008",
-                    "271.1700504",
-                    "273.4571988",
-                    "276.777648",
-                    "288.8695224",
-                    "296.2966716",
-                    "274.2100128",
-                    "179.6676876",
-                    "279.8210448",
-                    "315.7894836",
-                    "339.988428",
-                    "367.2019656",
-                    "457.6756608",
-                    "465.4042596",
-                    "384.7634784",
-                    "373.4234784",
-                    "374.8335264",
-                    "359.8661844",
-                    "310.8223692",
-                    "299.2568652",
-                    "279.2156832",
-                    "283.5914652",
-                    "390.2956488",
-                    "402.7797576",
-                    "382.4102988",
-                    "331.7005404",
-                    "311.0705208",
-                    "295.2989136",
-                    "297.9522468",
-                    "344.6025444",
-                    "300.4493148",
-                    "315.3359484",
-                    "268.2088848",
-                    "260.6437764",
-                    "256.2952104",
-                    "278.5133484",
-                    "",
-                    "341.3272608",
-                    "293.3725392",
-                    "317.3186016"
-                ]
-            }, {
-                name: '2022年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
-                yAxisIndex: 1,
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(232, 190, 49, 0.3)'
-                        }, {
-                            offset: 0.8,
-                            color: 'rgba(232, 190, 49, 0)'
-                        }], false),
-                        shadowColor: 'rgba(0, 0, 0, 0.1)',
-                        shadowBlur: 10
-                    }
+                "axisLine": {
+                    "show": false
                 },
-                itemStyle: {normal: {color: '#74e831'}},
-                data: [
-                    "288.4946868",
-                    "315.5264604",
-                    "320.1609564",
-                    "303.8472972",
-                    "306.68706",
-                    "321.0785892",
-                    "349.5358656",
-                    "329.8587948",
-                    "345.1873644",
-                    "319.277052",
-                    "329.2004592",
-                    "364.9374648",
-                    "368.6229648",
-                    "438.4250064",
-                    "405.3887028",
-                    "430.2300096",
-                    "445.4941032",
-                    "472.9266972",
-                    "495.6819624",
-                    "509.0758632",
-                    "510.9170256",
-                    "486.946242",
-                    "400.3082856",
-                    "",
-                    "262.5697296",
-                    "449.9671176",
-                    "472.8888216",
-                    "530.2239264",
-                    "598.2642504",
-                    "737.330364",
-                    "619.3395108",
-                    "535.9462524",
-                    "514.3986972",
-                    "501.72696",
-                    "464.2909956",
-                    "454.6982628",
-                    "416.8941048",
-                    "417.6339588",
-                    "347.2614828",
-                    "457.4314296",
-                    "439.1502804",
-                    "413.5502304",
-                    "471.435066",
-                    "435.5155836",
-                    "407.7096444",
-                    "334.2262824",
-                    "322.0361064",
-                    "334.720026",
-                    "361.4929884",
-                    "417.0002472",
-                    "380.8938816",
-                    "334.1932344",
-                    "354.7780236",
-                    "292.5887832",
-                    "332.1069012",
-                    "347.2443432",
-                    "363.285324"
-                ]
-            }, {
-                name: '2023年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
-                yAxisIndex: 1,
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(232, 190, 49, 0.3)'
-                        }, {
-                            offset: 0.8,
-                            color: 'rgba(232, 190, 49, 0)'
-                        }], false),
-                        shadowColor: 'rgba(0, 0, 0, 0.1)',
-                        shadowBlur: 10
-                    }
+                "splitLine": {
+                    "show": false
+                }
+            },
+            "yAxis": {
+                "type": "value",
+                "axisLabel": {
+                    "show": false,
+                    "color": "#999999",
+                    "fontSize": 16
                 },
-                itemStyle: {normal: {color: '#E8BE31'}},
-                data: [
-                    "279.230976",
-                    "320.256018",
-                    "409.8414672",
-                    "379.6030656",
-                    "397.9485612",
-                    "397.926594",
-                    "354.945402",
-                    "357.3589104",
-                    "393.3393048",
-                    "446.0350212",
-                    "435.720222",
-                    "454.2108048",
-                    "456.6596616",
-                    "488.9288952",
-                    "492.2297424",
-                    "506.1688056",
-                    "547.8485868",
-                    "536.9600808",
-                    "572.9425164",
-                    "577.4857416",
-                    "594.39177",
-                    "627.7893984",
-                    "584.8987968",
-                    "472.3666308",
-                    "389.9865528",
-                    "682.2626112",
-                    "708.2625096",
-                    "771.317964",
-                    "861.6598884",
-                    "989.0398728",
-                    "809.7719688",
-                    "721.4110128",
-                    "684.2855376",
-                    "647.5554396",
-                    "596.1321684",
-                    "539.3303676",
-                    "533.4411816",
-                    "543.107592",
-                    "472.1476068",
-                    "614.1711276",
-                    "550.714302",
-                    "487.127358",
-                    "466.528248",
-                    "492.3687384",
-                    "575.9100972",
-                    "495.7288128",
-                    "479.9020932",
-                    "429.713424",
-                    "426.312882",
-                    "434.2881096",
-                    "480.1981644",
-                    "578.8714248",
-                    "515.2768668",
-                    "",
-                    "485.7844428",
-                    "404.854038",
-                    "404.9594028"
-                ]
-            }]
-
-
-        };
-        /*var myChart = echarts.init(document.getElementById('channel_handle_detail'));
-        myChart.clear();
-        if(data.handleTimeData.length>0){
-            myChart.setOption(option);
-        }else{
-            noDataTip($("#channel_handle_detail"));
-        }*/
+                "axisTick": {
+                    "show": false
+                },
+                "axisLine": {
+                    "show": false
+                },
+                "splitLine": {
+                    "show": false
+                }
+            },
+            "series": [{
+                "name": "四川",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "stack": "a",
+                "type": "bar"
+            },
+                {
+                    "name": "广西",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stack": "a",
+                    "type": "bar"
+                },
+                {
+                    "name": "云南",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stack": "a",
+                    "type": "bar"
+                },
+                {
+                    "name": "广东",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stack": "a",
+                    "type": "bar"
+                },
+                {
+                    "name": "河南",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stack": "a",
+                    "type": "bar"
+                },
+                {
+                    "name": "重庆",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stack": "a",
+                    "type": "bar"
+                },
+                {
+                    "name": "湖南",
+                    "data": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stack": "a",
+                    "type": "bar"
+                },
+                {
+                    "type": "pictorialBar",
+                    "name": "提示框值",
+                    "data": [{
+                        "name": "",
+                        "value": 7.74,
+                        "label": {
+                            "show": true,
+                            "position": "top",
+                            formatter: function (params) {
+                                var index = params.dataIndex;
+                                var str = "{a|" + params.value + "万}";
+                                return str;
+                            },
+                            "rich": {
+                                "a": {
+                                    "fontSize": 18,
+                                    "color": "#534EE1",
+                                    "align": "center",
+                                    "height": 40
+                                },
+                                "c": {
+                                    "fontSize": 18,
+                                    "color": "#fff",
+                                    "padding": [
+                                        -2,
+                                        0,
+                                        2,
+                                        0
+                                    ],
+                                    "backgroundColor": {
+                                        "image": labelimg
+                                    },
+                                    "align": "center",
+                                    "verticalAlign": "bottom",
+                                    "height": 50,
+                                    "lineHeight": 40,
+                                    "width": 100
+                                }
+                            }
+                        },
+                        "itemStyle": {
+                            "normal": {
+                                "color": {
+                                    "type": "linear",
+                                    "x": 0,
+                                    "y": 0,
+                                    "x2": 0,
+                                    "y2": 1,
+                                    "colorStops": [{
+                                        "offset": 0,
+                                        "color": "rgba(83,78,225,1)"
+                                    },
+                                        {
+                                            "offset": 1,
+                                            "color": "rgba(83,78,225,0)"
+                                        }
+                                    ],
+                                    "global": false
+                                }
+                            }
+                        }
+                    },
+                        {
+                            "name": "",
+                            "value": 5.35,
+                            "label": {
+                                "show": true,
+                                "position": "top",
+                                formatter: function (params) {
+                                    var index = params.dataIndex;
+                                    var str = "{a|" + params.value + "万}";
+                                    return str;
+                                },
+                                "rich": {
+                                    "a": {
+                                        "fontSize": 18,
+                                        "color": "#ECD64F",
+                                        "align": "center",
+                                        "height": 40
+                                    },
+                                    "c": {
+                                        "fontSize": 18,
+                                        "color": "#fff",
+                                        "padding": [
+                                            -4,
+                                            0,
+                                            8,
+                                            0
+                                        ],
+                                        "backgroundColor": {
+                                            "image": labelimg
+                                        },
+                                        "align": "center",
+                                        "verticalAlign": "bottom",
+                                        "height": 45,
+                                        "lineHeight": 40,
+                                        "width": 100
+                                    }
+                                }
+                            },
+                            "itemStyle": {
+                                "normal": {
+                                    "color": {
+                                        "type": "linear",
+                                        "x": 0,
+                                        "y": 0,
+                                        "x2": 0,
+                                        "y2": 1,
+                                        "colorStops": [{
+                                            "offset": 0,
+                                            "color": "rgba(236,214,79,1)"
+                                        },
+                                            {
+                                                "offset": 1,
+                                                "color": "rgba(236,214,79,0)"
+                                            }
+                                        ],
+                                        "global": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "",
+                            "value": 4.63,
+                            "label": {
+                                "show": true,
+                                "position": "top",
+                                formatter: function (params) {
+                                    var index = params.dataIndex;
+                                    var str = "{a|" + params.value + "万}";
+                                    return str;
+                                },
+                                "rich": {
+                                    "a": {
+                                        "fontSize": 18,
+                                        "color": "#00E4F0",
+                                        "align": "center",
+                                        "height": 40
+                                    },
+                                    "c": {
+                                        "fontSize": 18,
+                                        "color": "#fff",
+                                        "padding": [
+                                            -4,
+                                            0,
+                                            8,
+                                            0
+                                        ],
+                                        "backgroundColor": {
+                                            "image": labelimg
+                                        },
+                                        "align": "center",
+                                        "verticalAlign": "bottom",
+                                        "height": 45,
+                                        "lineHeight": 40,
+                                        "width": 100
+                                    }
+                                }
+                            },
+                            "itemStyle": {
+                                "normal": {
+                                    "color": {
+                                        "type": "linear",
+                                        "x": 0,
+                                        "y": 0,
+                                        "x2": 0,
+                                        "y2": 1,
+                                        "colorStops": [{
+                                            "offset": 0,
+                                            "color": "rgba(0,228,240,1)"
+                                        },
+                                            {
+                                                "offset": 1,
+                                                "color": "rgba(0,228,240,0)"
+                                            }
+                                        ],
+                                        "global": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "",
+                            "value": 3.11,
+                            "label": {
+                                "show": true,
+                                formatter: function (params) {
+                                    var index = params.dataIndex;
+                                    var str = "{a|" + params.value + "万}";
+                                    return str;
+                                },
+                                "position": "top",
+                                "rich": {
+                                    "a": {
+                                        "fontSize": 18,
+                                        "color": "#44D16D",
+                                        "align": "center",
+                                        "height": 40
+                                    },
+                                    "c": {
+                                        "fontSize": 18,
+                                        "color": "#fff",
+                                        "padding": [
+                                            -4,
+                                            0,
+                                            8,
+                                            0
+                                        ],
+                                        "backgroundColor": {
+                                            "image": labelimg
+                                        },
+                                        "align": "center",
+                                        "verticalAlign": "bottom",
+                                        "height": 45,
+                                        "lineHeight": 40,
+                                        "width": 100
+                                    }
+                                }
+                            },
+                            "itemStyle": {
+                                "normal": {
+                                    "color": {
+                                        "type": "linear",
+                                        "x": 0,
+                                        "y": 0,
+                                        "x2": 0,
+                                        "y2": 1,
+                                        "colorStops": [{
+                                            "offset": 0,
+                                            "color": "rgba(68,209,109,1)"
+                                        },
+                                            {
+                                                "offset": 1,
+                                                "color": "rgba(68,209,109,0)"
+                                            }
+                                        ],
+                                        "global": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "",
+                            "value": 2.42,
+                            "label": {
+                                "show": true,
+                                "position": "top",
+                                formatter: function (params) {
+                                    var index = params.dataIndex;
+                                    var str = "{a|" + params.value + "万}";
+                                    return str;
+                                },
+                                "rich": {
+                                    "a": {
+                                        "fontSize": 18,
+                                        "color": "#124E91",
+                                        "align": "center",
+                                        "height": 30
+                                    },
+                                    "c": {
+                                        "fontSize": 18,
+                                        "color": "#fff",
+                                        "padding": [
+                                            -4,
+                                            0,
+                                            8,
+                                            0
+                                        ],
+                                        "backgroundColor": {
+                                            "image": labelimg
+                                        },
+                                        "align": "center",
+                                        "verticalAlign": "bottom",
+                                        "height": 45,
+                                        "lineHeight": 40,
+                                        "width": 100
+                                    }
+                                }
+                            },
+                            "itemStyle": {
+                                "normal": {
+                                    "color": {
+                                        "type": "linear",
+                                        "x": 0,
+                                        "y": 0,
+                                        "x2": 0,
+                                        "y2": 1,
+                                        "colorStops": [{
+                                            "offset": 0,
+                                            "color": "rgba(18,78,145,1)"
+                                        },
+                                            {
+                                                "offset": 1,
+                                                "color": "rgba(18,78,145,0)"
+                                            }
+                                        ],
+                                        "global": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "",
+                            "value": 2.21,
+                            "label": {
+                                "show": true,
+                                "position": "top",
+                                formatter: function (params) {
+                                    var index = params.dataIndex;
+                                    var str = "{a|" + params.value + "万}";
+                                    return str;
+                                },
+                                "rich": {
+                                    "a": {
+                                        "fontSize": 18,
+                                        "color": "#BDC414",
+                                        "align": "center",
+                                        "height": 30
+                                    },
+                                    "c": {
+                                        "fontSize": 18,
+                                        "color": "#fff",
+                                        "padding": [
+                                            -4,
+                                            0,
+                                            8,
+                                            0
+                                        ],
+                                        "backgroundColor": {
+                                            "image": labelimg
+                                        },
+                                        "align": "center",
+                                        "verticalAlign": "bottom",
+                                        "height": 45,
+                                        "lineHeight": 40,
+                                        "width": 100
+                                    }
+                                }
+                            },
+                            "itemStyle": {
+                                "normal": {
+                                    "color": {
+                                        "type": "linear",
+                                        "x": 0,
+                                        "y": 0,
+                                        "x2": 0,
+                                        "y2": 1,
+                                        "colorStops": [{
+                                            "offset": 0,
+                                            "color": "rgba(189,196,20,1)"
+                                        },
+                                            {
+                                                "offset": 1,
+                                                "color": "rgba(189,196,20,0)"
+                                            }
+                                        ],
+                                        "global": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "",
+                            "value": 2.09,
+                            "label": {
+                                "show": true,
+                                "position": "top",
+                                formatter: function (params) {
+                                    var index = params.dataIndex;
+                                    var str = "{a|" + params.value + "万}";
+                                    return str;
+                                },
+                                "rich": {
+                                    "a": {
+                                        "fontSize": 18,
+                                        "color": "#C8CCA5",
+                                        "align": "center",
+                                        "height": 30
+                                    },
+                                    "c": {
+                                        "fontSize": 18,
+                                        "color": "#fff",
+                                        "padding": [
+                                            -4,
+                                            0,
+                                            8,
+                                            0
+                                        ],
+                                        "backgroundColor": {
+                                            "image": labelimg
+                                        },
+                                        "align": "center",
+                                        "verticalAlign": "bottom",
+                                        "height": 45,
+                                        "lineHeight": 40,
+                                        "width": 100
+                                    }
+                                }
+                            },
+                            "itemStyle": {
+                                "normal": {
+                                    "color": {
+                                        "type": "linear",
+                                        "x": 0,
+                                        "y": 0,
+                                        "x2": 0,
+                                        "y2": 1,
+                                        "colorStops": [{
+                                            "offset": 0,
+                                            "color": "rgba(200,204,165,1)"
+                                        },
+                                            {
+                                                "offset": 1,
+                                                "color": "rgba(200,204,165,0)"
+                                            }
+                                        ],
+                                        "global": false
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "stack": "a",
+                    "symbol": "path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z"
+                }
+            ]
+        }
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         window.addEventListener("resize", function () {
@@ -1246,8 +838,8 @@ $(function () {
         });
     }
 
-    //左上
-    function ceshis4() {
+    //左下
+    function ceshis3() {
         var myChart = echarts.init(document.getElementById('chart1'));
 
         option = {
@@ -1429,8 +1021,8 @@ $(function () {
         });
     }
 
-    //地图1
-    function ceshis5() {
+    //中间上
+    function ceshis4() {
         var myChart = echarts.init(document.getElementById('map'));
         var uploadedDataURL = "./js/data-1528971808162-BkOXf61WX.json";
         var geoGpsMap = {
@@ -2189,20 +1781,6 @@ $(function () {
             /*});*/
         });
 
-        function randomNum(minNum, maxNum) {
-            switch (arguments.length) {
-                case 1:
-                    return parseInt(Math.random() * minNum + 1, 10);
-                    break;
-                case 2:
-                    return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
-                    break;
-                default:
-                    return 0;
-                    break;
-            }
-        }
-
         // 使用刚指定的配置项和数据显示图表。
         //myChart.setOption(option);
         window.addEventListener("resize", function () {
@@ -2210,620 +1788,2733 @@ $(function () {
         });
     }
 
-    //左下
-    function ceshis6() {
-        var myChart = echarts.init(document.getElementById('chart6'));
-        var labelimg = "";
-        option = {
-            /*backgroundColor: "#0E233E",*/
-            "grid": {
-                "left": "6%",
-                "top": "10%",
-                "right": "3%",
-                "bottom": "15%"
+    //中间下-折线图
+    function ceshis5() {
+        var myChart = echarts.init(document.getElementById('chart4'));
+
+        var option = {
+            tooltip: {trigger: 'axis', axisPointer: {lineStyle: {color: '#fff'}}},
+            legend: {
+                icon: 'rect',
+                itemWidth: 14, itemHeight: 5, itemGap: 10,
+                data: ['2019年', '2020年', '2021年', '2022年', '2023年'],
+                right: '10px', top: '0px',
+                textStyle: {fontSize: 12, color: '#fff'}
             },
-            "legend": {
-                "data": [
-                    "日本",
-                    "韩国",
-                    "美国",
-                    "澳大利亚",
-                    "俄罗斯",
-                    "法国",
-                    "英国"
+            grid: {x: 40, y: 50, x2: 45, y2: 40},
+            xAxis: [{
+                type: 'category',
+                boundaryGap: false,
+                axisLine: {lineStyle: {color: '#57617B'}},
+                axisLabel: {textStyle: {color: '#fff'}},
+                data: [
+                    "腊月初7",
+                    "腊月初8",
+                    "腊月初9",
+                    "腊月初10",
+                    "腊月初11",
+                    "腊月初12",
+                    "腊月初13",
+                    "腊月初14",
+                    "腊月初15",
+                    "腊月初16",
+                    "腊月初17",
+                    "腊月初18",
+                    "腊月初19",
+                    "腊月初20",
+                    "腊月初21",
+                    "腊月初22",
+                    "腊月初23",
+                    "腊月初24",
+                    "腊月初25",
+                    "腊月初26",
+                    "腊月初27",
+                    "腊月初28",
+                    "腊月初29",
+                    "腊月初30",
+                    "正月初1",
+                    "正月初2",
+                    "正月初3",
+                    "正月初4",
+                    "正月初5",
+                    "正月初6",
+                    "正月初7",
+                    "正月初8",
+                    "正月初9",
+                    "正月初10",
+                    "正月初11",
+                    "正月初12",
+                    "正月初13",
+                    "正月初14",
+                    "正月初15",
+                    "正月初16",
+                    "正月初17",
+                    "正月初18",
+                    "正月初19",
+                    "正月初20",
+                    "正月初21",
+                    "正月初22",
+                    "正月初23",
+                    "正月初24",
+                    "正月初25",
+                    "正月初26",
+                    "正月初27",
+                    "正月初28",
+                    "正月初29",
+                    "正月初30",
+                    "二月初1",
+                    "二月初2",
+                    "二月初3",
+                ]
+            }],
+            yAxis: [{
+                type: 'value',
+                axisTick: {
+                    show: false
+                },
+                axisLine: {lineStyle: {color: '#57617B'}},
+                axisLabel: {margin: 10, textStyle: {fontSize: 12}, textStyle: {color: '#fff'}, formatter: '{value}'},
+                splitLine: {lineStyle: {color: '#57617B'}}
+            }, {
+                type: 'value',
+                axisTick: {
+                    show: false
+                },
+                axisLine: {lineStyle: {color: '#57617B'}},
+                axisLabel: {margin: 10, textStyle: {fontSize: 12}, textStyle: {color: '#fff'}, formatter: '{value}'},
+                splitLine: {show: false, lineStyle: {color: '#57617B'}}
+            }],
+            series: [{
+                name: '2019年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
+                yAxisIndex: 0,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(185,150,248,0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: 'rgba(185,150,248,0)'
+                        }], false),
+                        shadowColor: 'rgba(0, 0, 0, 0.1)',
+                        shadowBlur: 10
+                    }
+                },
+                itemStyle: {normal: {color: '#B996F8'}},
+                data: [
+                    "353.7092772",
+                    "312.9795936",
+                    "333.7403148",
+                    "304.6864896",
+                    "311.8322448",
+                    "323.6503716",
+                    "338.8797",
+                    "372.6619488",
+                    "345.076848",
+                    "366.9401088",
+                    "367.8382044",
+                    "389.247606",
+                    "405.4737204",
+                    "436.0823892",
+                    "502.639344",
+                    "495.849114",
+                    "513.5867532",
+                    "490.7215872",
+                    "490.6611612",
+                    "493.986762",
+                    "530.0219448",
+                    "527.0810292",
+                    "488.5993548",
+                    "414.3138012",
+                    "342.6116616",
+                    "545.0786136",
+                    "591.068988",
+                    "606.2593068",
+                    "637.1947296",
+                    "726.2124984",
+                    "687.9075336",
+                    "597.5534592",
+                    "563.8972788",
+                    "505.580616",
+                    "469.952766",
+                    "487.8620604",
+                    "445.0947084",
+                    "415.8890568",
+                    "345.338802",
+                    "395.8886016",
+                    "431.404866",
+                    "412.1937396",
+                    "463.749948",
+                    "478.0189404",
+                    "368.9358516",
+                    "327.3258924",
+                    "364.208724",
+                    "417.344238",
+                    "355.913676",
+                    "394.2562572",
+                    "353.2459572",
+                    "362.2391928",
+                    "315.1831824",
+                    "299.6386668",
+                    "300.7750968",
+                    "338.5533672",
+                    "376.5856536",
                 ],
-                "top": "92%",
-                "icon": "circle",
-                "textStyle": {
-                    "color": "#0DCAD2"
-                }
-            },
-            "color": [
-                "#534EE1",
-                "#ECD64F",
-                "#00E4F0",
-                "#44D16D",
-                "#124E91",
-                "#BDC414",
-                "#C8CCA5"
-            ],
-            "tooltip": {
-                "position": "top",
-            },
-            "xAxis": {
-                "type": "category",
-                "data": [
-                    "日本",
-                    "韩国",
-                    "美国",
-                    "澳大利亚",
-                    "俄罗斯",
-                    "法国",
-                    "英国"
-                ],
-                "axisLabel": {
-                    "show": false,
-                    "color": "#999999",
-                    "fontSize": 16
+            }, {
+                name: '2020年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
+                yAxisIndex: 0,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(3, 194, 236, 0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: 'rgba(3, 194, 236, 0)'
+                        }], false),
+                        shadowColor: 'rgba(0, 0, 0, 0.1)',
+                        shadowBlur: 10
+                    }
                 },
-                "axisTick": {
-                    "show": false
+                itemStyle: {normal: {color: '#03C2EC'}},
+                data: [
+                    "266.8720608",
+                    "251.204328",
+                    "397.885122",
+                    "448.8799356",
+                    "420.7530096",
+                    "398.7199404",
+                    "401.682078",
+                    "447.0274008",
+                    "497.460042",
+                    "438.973668",
+                    "481.0020084",
+                    "446.3765172",
+                    "436.1630004",
+                    "412.6136436",
+                    "431.4138732",
+                    "450.4974408",
+                    "479.9456712",
+                    "529.5260304",
+                    "525.4227648",
+                    "542.3144724",
+                    "621.2109996",
+                    "580.6973268",
+                    "551.6447328",
+                    "448.30989",
+                    "261.5466672",
+                    "287.4244176",
+                    "264.7354104",
+                    "225.8917632",
+                    "192.6017028",
+                    "183.7748412",
+                    "153.6096312",
+                    "130.643928",
+                    "142.4592036",
+                    "117.190152",
+                    "85.9585284",
+                    "81.3802464",
+                    "81.188244",
+                    "85.798116",
+                    "94.7500092",
+                    "111.1956336",
+                    "100.9839312",
+                    "74.7511092",
+                    "71.3811852",
+                    "73.1563812",
+                    "73.4141556",
+                    "70.6802436",
+                    "73.5190992",
+                    "92.2017168",
+                    "96.6906396",
+                    "105.1612632",
+                    "114.5071728",
+                    "125.7085332",
+                    "144.2585376",
+                    "",
+                    "153.7678404",
+                    "174.826512",
+                    "176.0520096"
+                ]
+            }, {
+                name: '2021年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
+                yAxisIndex: 1,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(218, 57, 20, 0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: 'rgba(218, 57, 20, 0)'
+                        }], false),
+                        shadowColor: 'rgba(0, 0, 0, 0.1)',
+                        shadowBlur: 10
+                    }
                 },
-                "axisLine": {
-                    "show": false
+                itemStyle: {normal: {color: '#DA3914'}},
+                data: [
+                    "232.7756616",
+                    "230.016024",
+                    "233.3630412",
+                    "235.0945944",
+                    "259.4474064",
+                    "235.2896424",
+                    "258.7597812",
+                    "248.1890868",
+                    "279.7580592",
+                    "242.2203264",
+                    "203.4094356",
+                    "220.6766268",
+                    "179.8170516",
+                    "247.2565176",
+                    "215.67303",
+                    "214.9407252",
+                    "223.078698",
+                    "240.5989008",
+                    "271.1700504",
+                    "273.4571988",
+                    "276.777648",
+                    "288.8695224",
+                    "296.2966716",
+                    "274.2100128",
+                    "179.6676876",
+                    "279.8210448",
+                    "315.7894836",
+                    "339.988428",
+                    "367.2019656",
+                    "457.6756608",
+                    "465.4042596",
+                    "384.7634784",
+                    "373.4234784",
+                    "374.8335264",
+                    "359.8661844",
+                    "310.8223692",
+                    "299.2568652",
+                    "279.2156832",
+                    "283.5914652",
+                    "390.2956488",
+                    "402.7797576",
+                    "382.4102988",
+                    "331.7005404",
+                    "311.0705208",
+                    "295.2989136",
+                    "297.9522468",
+                    "344.6025444",
+                    "300.4493148",
+                    "315.3359484",
+                    "268.2088848",
+                    "260.6437764",
+                    "256.2952104",
+                    "278.5133484",
+                    "",
+                    "341.3272608",
+                    "293.3725392",
+                    "317.3186016"
+                ]
+            }, {
+                name: '2022年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
+                yAxisIndex: 1,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(232, 190, 49, 0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: 'rgba(232, 190, 49, 0)'
+                        }], false),
+                        shadowColor: 'rgba(0, 0, 0, 0.1)',
+                        shadowBlur: 10
+                    }
                 },
-                "splitLine": {
-                    "show": false
-                }
-            },
-            "yAxis": {
-                "type": "value",
-                "axisLabel": {
-                    "show": false,
-                    "color": "#999999",
-                    "fontSize": 16
+                itemStyle: {normal: {color: '#74e831'}},
+                data: [
+                    "288.4946868",
+                    "315.5264604",
+                    "320.1609564",
+                    "303.8472972",
+                    "306.68706",
+                    "321.0785892",
+                    "349.5358656",
+                    "329.8587948",
+                    "345.1873644",
+                    "319.277052",
+                    "329.2004592",
+                    "364.9374648",
+                    "368.6229648",
+                    "438.4250064",
+                    "405.3887028",
+                    "430.2300096",
+                    "445.4941032",
+                    "472.9266972",
+                    "495.6819624",
+                    "509.0758632",
+                    "510.9170256",
+                    "486.946242",
+                    "400.3082856",
+                    "",
+                    "262.5697296",
+                    "449.9671176",
+                    "472.8888216",
+                    "530.2239264",
+                    "598.2642504",
+                    "737.330364",
+                    "619.3395108",
+                    "535.9462524",
+                    "514.3986972",
+                    "501.72696",
+                    "464.2909956",
+                    "454.6982628",
+                    "416.8941048",
+                    "417.6339588",
+                    "347.2614828",
+                    "457.4314296",
+                    "439.1502804",
+                    "413.5502304",
+                    "471.435066",
+                    "435.5155836",
+                    "407.7096444",
+                    "334.2262824",
+                    "322.0361064",
+                    "334.720026",
+                    "361.4929884",
+                    "417.0002472",
+                    "380.8938816",
+                    "334.1932344",
+                    "354.7780236",
+                    "292.5887832",
+                    "332.1069012",
+                    "347.2443432",
+                    "363.285324"
+                ]
+            }, {
+                name: '2023年', type: 'line', smooth: true, lineStyle: {normal: {width: 2}},
+                yAxisIndex: 1,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(232, 190, 49, 0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: 'rgba(232, 190, 49, 0)'
+                        }], false),
+                        shadowColor: 'rgba(0, 0, 0, 0.1)',
+                        shadowBlur: 10
+                    }
                 },
-                "axisTick": {
-                    "show": false
-                },
-                "axisLine": {
-                    "show": false
-                },
-                "splitLine": {
-                    "show": false
-                }
-            },
-            "series": [{
-                "name": "日本",
-                "data": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                "stack": "a",
-                "type": "bar"
-            },
-                {
-                    "name": "韩国",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "美国",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "澳大利亚",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "俄罗斯",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "法国",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "英国",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "type": "pictorialBar",
-                    "name": "提示框值",
-                    "data": [{
-                        "name": "",
-                        "value": 868,
-                        "label": {
-                            "show": true,
-                            "position": "top",
-                            formatter: function (params) {
-                                var index = params.dataIndex;
-                                var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                return str;
-                            },
-                            "rich": {
-                                "a": {
-                                    "fontSize": 18,
-                                    "color": "#534EE1",
-                                    "align": "center",
-                                    "height": 40
-                                },
-                                "c": {
-                                    "fontSize": 18,
-                                    "color": "#fff",
-                                    "padding": [
-                                        -2,
-                                        0,
-                                        2,
-                                        0
-                                    ],
-                                    "backgroundColor": {
-                                        "image": labelimg
-                                    },
-                                    "align": "center",
-                                    "verticalAlign": "bottom",
-                                    "height": 50,
-                                    "lineHeight": 40,
-                                    "width": 100
-                                }
-                            }
-                        },
-                        "itemStyle": {
-                            "normal": {
-                                "color": {
-                                    "type": "linear",
-                                    "x": 0,
-                                    "y": 0,
-                                    "x2": 0,
-                                    "y2": 1,
-                                    "colorStops": [{
-                                        "offset": 0,
-                                        "color": "rgba(83,78,225,1)"
-                                    },
-                                        {
-                                            "offset": 1,
-                                            "color": "rgba(83,78,225,0)"
-                                        }
-                                    ],
-                                    "global": false
-                                }
-                            }
-                        }
-                    },
-                        {
-                            "name": "",
-                            "value": 306,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#ECD64F",
-                                        "align": "center",
-                                        "height": 40
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(236,214,79,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(236,214,79,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 162,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#00E4F0",
-                                        "align": "center",
-                                        "height": 40
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(0,228,240,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(0,228,240,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 362,
-                            "label": {
-                                "show": true,
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                    return str;
-                                },
-                                "position": "top",
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#44D16D",
-                                        "align": "center",
-                                        "height": 40
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(68,209,109,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(68,209,109,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 460,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#124E91",
-                                        "align": "center",
-                                        "height": 30
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(18,78,145,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(18,78,145,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 606,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#BDC414",
-                                        "align": "center",
-                                        "height": 30
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(189,196,20,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(189,196,20,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 506,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "}\n{c|" + params.value + "个}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#C8CCA5",
-                                        "align": "center",
-                                        "height": 30
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(200,204,165,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(200,204,165,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        }
-                    ],
-                    "stack": "a",
-                    "symbol": "path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z"
-                }
-            ]
-        }
+                itemStyle: {normal: {color: '#E8BE31'}},
+                data: [
+                    "279.230976",
+                    "320.256018",
+                    "409.8414672",
+                    "379.6030656",
+                    "397.9485612",
+                    "397.926594",
+                    "354.945402",
+                    "357.3589104",
+                    "393.3393048",
+                    "446.0350212",
+                    "435.720222",
+                    "454.2108048",
+                    "456.6596616",
+                    "488.9288952",
+                    "492.2297424",
+                    "506.1688056",
+                    "547.8485868",
+                    "536.9600808",
+                    "572.9425164",
+                    "577.4857416",
+                    "594.39177",
+                    "627.7893984",
+                    "584.8987968",
+                    "472.3666308",
+                    "389.9865528",
+                    "682.2626112",
+                    "708.2625096",
+                    "771.317964",
+                    "861.6598884",
+                    "989.0398728",
+                    "809.7719688",
+                    "721.4110128",
+                    "684.2855376",
+                    "647.5554396",
+                    "596.1321684",
+                    "539.3303676",
+                    "533.4411816",
+                    "543.107592",
+                    "472.1476068",
+                    "614.1711276",
+                    "550.714302",
+                    "487.127358",
+                    "466.528248",
+                    "492.3687384",
+                    "575.9100972",
+                    "495.7288128",
+                    "479.9020932",
+                    "429.713424",
+                    "426.312882",
+                    "434.2881096",
+                    "480.1981644",
+                    "578.8714248",
+                    "515.2768668",
+                    "",
+                    "485.7844428",
+                    "404.854038",
+                    "404.9594028"
+                ]
+            }]
+
+
+        };
+        /*var myChart = echarts.init(document.getElementById('channel_handle_detail'));
+        myChart.clear();
+        if(data.handleTimeData.length>0){
+            myChart.setOption(option);
+        }else{
+            noDataTip($("#channel_handle_detail"));
+        }*/
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         window.addEventListener("resize", function () {
             myChart.resize();
         });
+    }
+
+    //右上
+    function ceshis6() {
+        var myChart = echarts.init(document.getElementById('chart2'));
+        var all = {
+            "options": [{
+                "series": [{
+                    "center": [100, 38],
+                    "data": [{
+                        "name": "青海",
+                        "value": 88.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#730000"
+                            },
+                            "normal": {
+                                "areaColor": "#730000"
+                            }
+                        }
+                    }, {
+                        "name": "西藏",
+                        "value": 244.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#260707"
+                            },
+                            "normal": {
+                                "areaColor": "#260707"
+                            }
+                        }
+                    }, {
+                        "name": "新疆",
+                        "value": 92.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#5b0000"
+                            },
+                            "normal": {
+                                "areaColor": "#5b0000"
+                            }
+                        }
+                    }, {
+                        "name": "重庆",
+                        "value": 63.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#b20101"
+                            },
+                            "normal": {
+                                "areaColor": "#b20101"
+                            }
+                        }
+                    }, {
+                        "name": "宁夏",
+                        "value": 44.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "云南",
+                        "value": 64,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#b20101"
+                            },
+                            "normal": {
+                                "areaColor": "#b20101"
+                            }
+                        }
+                    }, {
+                        "name": "甘肃",
+                        "value": 64.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#b20101"
+                            },
+                            "normal": {
+                                "areaColor": "#b20101"
+                            }
+                        }
+                    }, {
+                        "name": "贵州",
+                        "value": 79.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#9e0101"
+                            },
+                            "normal": {
+                                "areaColor": "#9e0101"
+                            }
+                        }
+                    }, {
+                        "name": "辽宁",
+                        "value": 19.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "广西",
+                        "value": 29.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "四川",
+                        "value": 57.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#db0000"
+                            },
+                            "normal": {
+                                "areaColor": "#db0000"
+                            }
+                        }
+                    }, {
+                        "name": "吉林",
+                        "value": 30.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "黑龙江",
+                        "value": 27,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "上海",
+                        "value": 9.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "江西",
+                        "value": 31.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "广东",
+                        "value": 17.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "内蒙古",
+                        "value": 38.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "陕西",
+                        "value": 32.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "天津",
+                        "value": 6.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "湖南",
+                        "value": 34.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "福建",
+                        "value": 24.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "浙江",
+                        "value": 10.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "北京",
+                        "value": 7.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "海南",
+                        "value": 41.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "河南",
+                        "value": 41.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "湖北",
+                        "value": 27.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "安徽",
+                        "value": 26.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "江苏",
+                        "value": 11.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "山西",
+                        "value": 39.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "山东",
+                        "value": 15.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河北",
+                        "value": 23.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
+                        }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+                "title": {
+                    "text": "2006"
+                }
+            }, {
+                "series": [{
+                    "center": [100, 38],
+                    "data": [{
+                        "name": "青海",
+                        "value": 50.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "新疆",
+                        "value": 62.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#b20101"
+                            },
+                            "normal": {
+                                "areaColor": "#b20101"
+                            }
+                        }
+                    }, {
+                        "name": "西藏",
+                        "value": 234.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#260707"
+                            },
+                            "normal": {
+                                "areaColor": "#260707"
+                            }
+                        }
+                    }, {
+                        "name": "重庆",
+                        "value": 35.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "宁夏",
+                        "value": 25.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "贵州",
+                        "value": 56.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#db0000"
+                            },
+                            "normal": {
+                                "areaColor": "#db0000"
+                            }
+                        }
+                    }, {
+                        "name": "云南",
+                        "value": 47.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "广西",
+                        "value": 21.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "甘肃",
+                        "value": 41.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "辽宁",
+                        "value": 15.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "黑龙江",
+                        "value": 21.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "上海",
+                        "value": 7.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "四川",
+                        "value": 39.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "吉林",
+                        "value": 27.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "湖南",
+                        "value": 30.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "江西",
+                        "value": 16.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "内蒙古",
+                        "value": 30.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "福建",
+                        "value": 16.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "广东",
+                        "value": 16.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "陕西",
+                        "value": 25.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "浙江",
+                        "value": 6.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "天津",
+                        "value": 7.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "北京",
+                        "value": 18.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "安徽",
+                        "value": 20.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河南",
+                        "value": 21.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "湖北",
+                        "value": 17.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "海南",
+                        "value": 21.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "江苏",
+                        "value": 9.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "山西",
+                        "value": 28.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "山东",
+                        "value": 12.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河北",
+                        "value": 11.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
+                        }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+                "title": {
+                    "text": "2008"
+                }
+            }, {
+                "series": [{
+                    "center": [100, 38],
+                    "data": [{
+                        "name": "青海",
+                        "value": 45.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "西藏",
+                        "value": 174.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#260707"
+                            },
+                            "normal": {
+                                "areaColor": "#260707"
+                            }
+                        }
+                    }, {
+                        "name": "宁夏",
+                        "value": 29.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "新疆",
+                        "value": 43.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff1111"
+                            },
+                            "normal": {
+                                "areaColor": "#ff1111"
+                            }
+                        }
+                    }, {
+                        "name": "贵州",
+                        "value": 35.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "云南",
+                        "value": 37.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "重庆",
+                        "value": 23.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "甘肃",
+                        "value": 33.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "四川",
+                        "value": 22.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "广西",
+                        "value": 20.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "辽宁",
+                        "value": 12.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "黑龙江",
+                        "value": 21.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "吉林",
+                        "value": 28.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "上海",
+                        "value": 6.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "湖南",
+                        "value": 26.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "江西",
+                        "value": 11.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "内蒙古",
+                        "value": 35.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "陕西",
+                        "value": 17.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "福建",
+                        "value": 12.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "天津",
+                        "value": 9.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "浙江",
+                        "value": 7.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "广东",
+                        "value": 10.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "北京",
+                        "value": 13.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "安徽",
+                        "value": 21.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "海南",
+                        "value": 22.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "湖北",
+                        "value": 15.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河南",
+                        "value": 15.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "江苏",
+                        "value": 3.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "山西",
+                        "value": 14.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "山东",
+                        "value": 11.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河北",
+                        "value": 18.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
+                        }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+                "title": {
+                    "text": "2010"
+                }
+            }, {
+                "series": [{
+                    "center": [100, 38],
+                    "data": [{
+                        "name": "青海",
+                        "value": 36.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "西藏",
+                        "value": 176.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#260707"
+                            },
+                            "normal": {
+                                "areaColor": "#260707"
+                            }
+                        }
+                    }, {
+                        "name": "宁夏",
+                        "value": 27.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "重庆",
+                        "value": 15.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "贵州",
+                        "value": 26.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "云南",
+                        "value": 28.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "甘肃",
+                        "value": 24.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "辽宁",
+                        "value": 7.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "四川",
+                        "value": 18.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "黑龙江",
+                        "value": 17.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "广西",
+                        "value": 17.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "吉林",
+                        "value": 16.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "江西",
+                        "value": 11.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "新疆",
+                        "value": 34.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "上海",
+                        "value": 2.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "内蒙古",
+                        "value": 20.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "陕西",
+                        "value": 10.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "福建",
+                        "value": 11.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "天津",
+                        "value": 9.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "湖南",
+                        "value": 19.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "浙江",
+                        "value": 4.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "广东",
+                        "value": 9.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "北京",
+                        "value": 6.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "海南",
+                        "value": 25.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "湖北",
+                        "value": 10.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "安徽",
+                        "value": 11.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河南",
+                        "value": 9.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "山西",
+                        "value": 11.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "江苏",
+                        "value": 1.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "山东",
+                        "value": 10.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "河北",
+                        "value": 10.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
+                        }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+                "title": {
+                    "text": "2012"
+                }
+            }, {
+                "series": [{
+                    "center": [100, 38],
+                    "data": [{
+                        "name": "西藏",
+                        "value": 108.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#410000"
+                            },
+                            "normal": {
+                                "areaColor": "#410000"
+                            }
+                        }
+                    }, {
+                        "name": "青海",
+                        "value": 33.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "宁夏",
+                        "value": 14.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "重庆",
+                        "value": 18.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "贵州",
+                        "value": 26.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "云南",
+                        "value": 22.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "甘肃",
+                        "value": 19.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "四川",
+                        "value": 18.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "江西",
+                        "value": 9.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "上海",
+                        "value": 5.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "黑龙江",
+                        "value": 14.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "辽宁",
+                        "value": 10.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "内蒙古",
+                        "value": 19.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "福建",
+                        "value": 10.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "吉林",
+                        "value": 25.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff6b6b"
+                            },
+                            "normal": {
+                                "areaColor": "#ff6b6b"
+                            }
+                        }
+                    }, {
+                        "name": "湖南",
+                        "value": 14.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "天津",
+                        "value": 9.3,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "陕西",
+                        "value": 11.6,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "新疆",
+                        "value": 39.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff3636"
+                            },
+                            "normal": {
+                                "areaColor": "#ff3636"
+                            }
+                        }
+                    }, {
+                        "name": "广西",
+                        "value": 14.1,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "北京",
+                        "value": 7.7,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "浙江",
+                        "value": 5.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "海南",
+                        "value": 15,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "广东",
+                        "value": 8.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "湖北",
+                        "value": 9.0,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "安徽",
+                        "value": 11.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "河南",
+                        "value": 11.2,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "山西",
+                        "value": 14.4,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ff8e8e"
+                            },
+                            "normal": {
+                                "areaColor": "#ff8e8e"
+                            }
+                        }
+                    }, {
+                        "name": "江苏",
+                        "value": 1.9,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "河北",
+                        "value": 8.8,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }, {
+                        "name": "山东",
+                        "value": 9.5,
+                        "itemStyle": {
+                            "emphasis": {
+                                "areaColor": "#ffd9d9"
+                            },
+                            "normal": {
+                                "areaColor": "#ffd9d9"
+                            }
+                        }
+                    }],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
+                        }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }],
+            "years": ["2006", "2008", "2010", "2012", "2014"]
+        };
+
+        option = {
+            baseOption: {
+                timeline: {
+                    axisType: 'category',
+                    orient: 'vertical',
+                    autoPlay: true,
+                    inverse: true,
+                    playInterval: 5000,
+                    left: 20,
+                    right: null,
+                    top: 20,
+                    bottom: 20,
+                    width: 65,
+                    height: null,
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#ddd'
+                            }
+                        },
+                        emphasis: {
+                            textStyle: {
+                                color: '#fff'
+                            }
+                        }
+                    },
+                    symbolSize: 10,
+                    lineStyle: {
+                        color: '#555'
+                    },
+                    checkpointStyle: {
+                        borderColor: '#777',
+                        borderWidth: 1
+                    },
+                    controlStyle: {
+                        showNextBtn: true,
+                        showPrevBtn: true,
+                        normal: {
+                            color: '#666',
+                            borderColor: '#666'
+                        },
+                        emphasis: {
+                            color: '#aaa',
+                            borderColor: '#aaa'
+                        }
+                    },
+                    data: all.years
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{b}: {c}'
+                },
+                series: [],
+                animationDurationUpdate: 1000,
+                animationEasingUpdate: 'quinticInOut'
+            },
+            options: all.options
+        };
+        myChart.setOption(option);
+    }
+
+    //右下
+    function ceshis7() {
+        var myChart = echarts.init(document.getElementById('chart5'));
+        var xData = (function () {
+            var data = [];
+            for (var i = 1; i < 13; i++) {
+                data.push(i + "月份");
+            }
+            return data;
+        })();
+        option = {
+            backgroundColor: "#152439",
+            tooltip: {
+                axisPointer: {
+                    type: "shadow",
+                    textStyle: {
+                        color: "#fff",
+                    },
+                },
+            },
+            grid: {
+                borderWidth: 0,
+                top: 25,
+                bottom: 17,
+                left: 120,
+                textStyle: {
+                    color: "#fff",
+                },
+            },
+            legend: {
+                icon: "circle",
+                right: "4%",
+                top: "0%",
+                textStyle: {
+                    color: "#90979c",
+                },
+                data: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: "value",
+                    trigger: "axis",
+                    axisLine: {
+                        lineStyle: {
+                            color: "#fff",
+                        },
+                    },
+                    splitLine: {
+                        show: false,
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                    splitArea: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        interval: 0,
+                    },
+                    data: ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+                },
+            ],
+            yAxis: [
+                {
+                    type: "category",
+                    splitLine: {
+                        show: false,
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: "#fff",
+                        },
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        interval: 0,
+                    },
+                    splitArea: {
+                        show: false,
+                    },
+                    data: ["01_AE", "07_BC", "B", "BC", "55_01B", "08_BC", "C", "01B"],
+                },
+            ],
+            series: [
+                {
+                    name: "2012",
+                    type: "bar",
+                    stack: "总量",
+                    barMaxWidth: 15,
+                    barGap: "10%",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(245,221,111,1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(245,221,111,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(245,221,111,1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(245,221,111,0)",
+                                },
+                            ]),
+                        },
+                    },
+                    data: [59, 65, 82, 246, 482, 623, 1103, 2158],
+                },
+                {
+                    name: "2013",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(24,191,207,1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(24,191,207,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(24,191,207,1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(24,191,207,0)",
+                                },
+                            ]),
+                        },
+                    },
+                    data: [105, 157, 109, 224, 493, 418, 1064, 3350],
+                },
+                {
+                    name: "2014",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(98,113,228,1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgba(98,113,228,1)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [67, 243, 331, 261, 253, 348, 1638, 1713],
+                }, {
+                    name: "2015",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(0,119,181)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(0,119,181)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [168, 384, 723, 276, 836, 456, 1301, 2648],
+                }, {
+                    name: "2016",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(76,175,80)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(76,175,80)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [52, 69, 161, 168, 102, 136, 729, 1110],
+                }, {
+                    name: "2017",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(103,58,183)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(103,58,183)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [110, 20, 186, 256, 332, 240, 882, 1664],
+                }, {
+                    name: "2018",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(244,67,54)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(244,67,54)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [110, 145, 301, 284, 228, 400, 1488, 1889],
+                }, {
+                    name: "2019",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(248,90,4)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(248,90,4)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [93, 347, 206, 167, 154, 424, 907, 1308],
+                }, {
+                    name: "2020",
+                    type: "bar",
+                    stack: "总量",
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(250,250,252)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            borderColor: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+                                {
+                                    offset: 0,
+                                    color: "rgb(247,248,250)",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "rgba(40,54,117,0)",
+                                },
+                            ]),
+                            barBorderRadius: 0,
+                        },
+                    },
+                    data: [58, 436, 89, 10, 117, 478, 314, 748],
+                },
+            ],
+        };
+        myChart.setOption(option);
+    }
+
+    function ceshis8() {
+        // var myChart = echarts.init(document.getElementById('chart7'));
+        // myChart.setOption(optionXyMap01);
     }
 });

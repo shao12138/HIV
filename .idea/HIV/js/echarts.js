@@ -1175,31 +1175,6 @@ $(function () {
         var myChart = echarts.init(document.getElementById('map'));
 
 
-        var uploadedDataURL = "./js/data-1528971808162-BkOXf61WX.json";
-        //console.log(uploadedDataURL);
-// echarts.extendsMap = function(id, opt) {
-//     // 实例
-//     var cityMap = {
-//         "郑州市": zhengzhou,
-//         "开封市": kaifeng,
-//         "洛阳市": luoyang,
-//         "平顶山市": pingdingshan,
-//         "安阳市": anyang,
-//         "鹤壁市": hebi,
-//         "新乡市": xinxiang,
-//         "焦作市": jiaozuo,
-//         "濮阳市": puyang,
-//         "漯河市": luohe,
-//         "三门峡市": sanmenxia,
-//         "南阳市": nanyang,
-//         "商丘市": shangqiu,
-//         "信阳市": xinyang,
-//         "周口市": zhoukou,
-//         "许昌市": xuchang,
-//         "驻马店市": zhumadian
-//     };
-
-// }
         var geoGpsMap = {
             '1': [116.4071, 39.9046],
             '2': [125.8154, 44.2584],
@@ -1456,26 +1431,6 @@ $(function () {
         ];
         var colorIndex = 0;
         $(function() {
-            // var geoCoordMap = {
-            //     '郑州': [113.64964385, 34.7566100641],
-            //     '开封': [114.351642118, 34.8018541758],
-            //     '洛阳': [112.447524769, 34.6573678177],
-            //     '平顶山': [113.300848978, 33.7453014565],
-            //     '安阳': [114.351806508, 36.1102667222],
-            //     '鹤壁': [114.297769838, 35.7554258742],
-            //     '新乡': [113.912690161, 35.3072575577],
-            //     '焦作': [113.211835885, 35.234607555],
-            //     '濮阳': [115.026627441, 35.7532978882],
-            //     '漯河': [114.0460614, 33.5762786885],
-            //     '三门峡': [111.181262093, 34.7833199411],
-            //     '南阳': [112.542841901, 33.0114195691],
-            //     "商丘": [115.641885688, 34.4385886402],
-            //     '信阳': [114.085490993, 32.1285823075],
-            //     '周口': [114.654101942, 33.6237408181],
-            //     '许昌': [113.83531246, 34.0267395887],
-            //     '驻马店': [114.049153547, 32.9831581541]
-            // };
-
             var year = ["北京", "长春", "上海", "青岛", "成都", "贵阳"];
             var mapData = [
                 [],
@@ -1691,7 +1646,6 @@ $(function () {
                     options: []
 
                 };
-
                 for (var n = 0; n < year.length; n++) {
 
                     optionXyMap01.options.push({
@@ -1897,22 +1851,6 @@ $(function () {
             /*});*/
         });
 
-
-        function randomNum(minNum, maxNum) {
-            switch (arguments.length) {
-                case 1:
-                    return parseInt(Math.random() * minNum + 1, 10);
-                    break;
-                case 2:
-                    return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
-                    break;
-                default:
-                    return 0;
-                    break;
-            }
-        }
-
-        // 使用刚指定的配置项和数据显示图表。
         //myChart.setOption(option);
         window.addEventListener("resize",function(){
             myChart.resize();

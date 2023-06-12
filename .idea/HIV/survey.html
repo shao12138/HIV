@@ -65,7 +65,7 @@
     <div class="center">
         <div class="center-left fl">
             <div class="left-top rightTop border">
-                <div class="title">2012－2019全国31个省/直辖市/自治区艾滋病累计发病数情况</div>
+                <div class="title">2012－2019全国31个省丨直辖市丨自治区艾滋病累计发病数情况</div>
                 <div class="bottom-b">
                     <div id="chart3" class="allnav"></div>
                 </div>
@@ -73,13 +73,13 @@
             <div class="left-cen rightTop border">
                 <div class="title">2012－2022全国艾滋病发病例数和发病率变化趋势图</div>
                 <div class="bottom-b">
-                    <div id="chart1" class="allnav"></div>
+                    <div id="chart6" class="allnav"></div>
                 </div>
             </div>
             <div class="left-bottom rightTop border">
-                <div class="title">2012－2019全国31个省/直辖市/自治区艾滋病累计发病数情况</div>
+                <div class="title">2012－2019全国31个省丨直辖市丨自治区艾滋病高发病省份统计</div>
                 <div class="bottom-b">
-                    <div id="chart6" class="allnav"></div>
+                    <div id="chart1" class="allnav"></div>
                 </div>
 
             </div>
@@ -100,93 +100,34 @@
         </div>
         <div class="center-right fr">
             <div class="right-top rightTop border">
-                <div class="title">各年龄段占比</div>
+                <div class="title">2012－2022各省年患艾滋病数据</div>
 
                 <div class="right-top-cent">
-                    <div id="shuiipin" class="allnav"></div>
+                    <div id="chart2" class="allnav"></div>
                 </div>
 
             </div>
-            <div class="right-cen border">
-                <div class="title">2012－2019全国31个省/直辖市/自治区艾滋病累计发病数情况</div>
+            <div class="right-cen rightTop border">
+                <div class="title">2012－2020全国亚型比例的变化图</div>
                 <div class="right-cen-cent">
-                    <div id="chart3" class="allnav"></div>
+                    <div id="chart7" class="allnav"></div>
                 </div>
-
             </div>
             <div class="right-bottom rightTop border">
                 <div class="title">2012－2020全国亚型比例的变化图</div>
                 <div class="chat">
                     <div id="chart5" class="allnav"></div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 
-<div class="popup">
-    <a href="javascript:;" class="popupClose"></a>
-    <div class="summary">
-        <div class="summaryTop">
-            <div id="summaryPie1" class="summaryPie"></div>
-            <div id="summaryPie2" class="summaryPie"></div>
-            <div id="summaryPie3" class="summaryPie"></div>
-        </div>
-        <div class="summaryBottom">
-            <div class="summaryBar">
-                <div class="summaryTit">
-                    <!--                    <img src="images/tit1.png">-->
-                </div>
-                <div id="summaryBar"></div>
-            </div>
-
-            <div class="summaryLine">
-                <div class="summaryTit">
-                    <!--                    <img src="images/tit2.png">-->
-                </div>
-                <div id="summaryLine"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    $('#chart3').on('click', function () {
-        $('.filterbg').show();
-        $('.popup').show();
-        $('.popup').width('3px');
-        $('.popup').animate({height: '76%'}, 400, function () {
-            $('.popup').animate({width: '82%'}, 400);
-        });
-        setTimeout(summaryShow, 800);
-    });
-    $('.popupClose').on('click', function () {
-        $('.popupClose').css('display', 'none');
-        $('.summary').hide();
-        $('.popup').animate({width: '3px'}, 400, function () {
-            $('.popup').animate({height: 0}, 400);
-        });
-        setTimeout(summaryHide, 800);
-    });
-
-    function summaryShow() {
-        $('.popupClose').css('display', 'block');
-        $('.summary').show();
-        setSummary();
-
-    };
-
-    function summaryHide() {
-        $('.filterbg').hide();
-        $('.popup').hide();
-        $('.popup').width(0);
-    };
-</script>
-<script src="js/jquery.min.js"></script>
 <script src="js/survey.js"></script>
-<script src="js/echarts-4.2.1.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/echarts/5.2.0/echarts.js"></script>
 <script src="js/wodry.min.js"></script>
 <script src="js/fontscroll.js"></script>
-<script src="js/china.js"></script>
+<script src="https://www.makeapie.cn/dep/echarts/map/js/china.js"></script>
 </body>
 </html>
