@@ -224,614 +224,735 @@ $(function () {
     //左中
     function ceshis2() {
         var myChart = echarts.init(document.getElementById('chart6'));
-        var labelimg = "";
+        var xData = [
+            "2012-01" ,
+            "2012-02" ,
+            "2012-03" ,
+            "2012-04" ,
+            "2012-05" ,
+            "2012-06" ,
+            "2012-07" ,
+            "2012-08" ,
+            "2012-09" ,
+            "2012-10" ,
+            "2012-11" ,
+            "2012-12" ,
+            "2013-01" ,
+            "2013-02" ,
+            "2013-03" ,
+            "2013-04" ,
+            "2013-05" ,
+            "2013-06" ,
+            "2013-07" ,
+            "2013-08" ,
+            "2013-09" ,
+            "2013-10" ,
+            "2013-11" ,
+            "2013-12" ,
+            "2014-01" ,
+            "2014-02" ,
+            "2014-03" ,
+            "2014-04" ,
+            "2014-05" ,
+            "2014-06" ,
+            "2014-07" ,
+            "2014-08" ,
+            "2014-09" ,
+            "2014-10" ,
+            "2014-11" ,
+            "2014-12" ,
+            "2015-01" ,
+            "2015-02" ,
+            "2015-03" ,
+            "2015-04" ,
+            "2015-05" ,
+            "2015-06" ,
+            "2015-07" ,
+            "2015-08" ,
+            "2015-09" ,
+            "2015-10" ,
+            "2015-11" ,
+            "2015-12" ,
+            "2016-01" ,
+            "2016-02" ,
+            "2016-03" ,
+            "2016-04" ,
+            "2016-05" ,
+            "2016-06" ,
+            "2016-07" ,
+            "2016-08" ,
+            "2016-09" ,
+            "2016-10" ,
+            "2016-11" ,
+            "2016-12" ,
+            "2017-01" ,
+            "2017-02" ,
+            "2017-03" ,
+            "2017-04" ,
+            "2017-05" ,
+            "2017-06" ,
+            "2017-07" ,
+            "2017-08" ,
+            "2017-09" ,
+            "2017-10" ,
+            "2017-11" ,
+            "2017-12" ,
+            "2018-01" ,
+            "2018-02" ,
+            "2018-03" ,
+            "2018-04" ,
+            "2018-05" ,
+            "2018-06" ,
+            "2018-07" ,
+            "2018-08" ,
+            "2018-09" ,
+            "2018-10" ,
+            "2018-11" ,
+            "2018-12" ,
+            "2019-01" ,
+            "2019-02" ,
+            "2019-03" ,
+            "2019-04" ,
+            "2019-05" ,
+            "2019-06" ,
+            "2019-07" ,
+            "2019-08" ,
+            "2019-09" ,
+            "2019-10" ,
+            "2019-11" ,
+            "2019-12" ,
+            "2020-01" ,
+            "2020-02" ,
+            "2020-03" ,
+            "2020-04" ,
+            "2020-05" ,
+            "2020-06" ,
+            "2020-07" ,
+            "2020-08" ,
+            "2020-09" ,
+            "2020-10" ,
+            "2020-11" ,
+            "2020-12" ,
+            "2021-01" ,
+            "2021-02" ,
+            "2021-03" ,
+            "2021-04" ,
+            "2021-05" ,
+            "2021-06" ,
+            "2021-07" ,
+            "2021-08" ,
+            "2021-09" ,
+            "2021-10" ,
+            "2021-11" ,
+            "2021-12" ,
+            "2022-01" ,
+            "2022-02" ,
+            "2022-03" ,
+            "2022-04" ,
+            "2022-05" ,
+            "2022-06" ,
+            "2022-07" ,
+            "2022-08" ,
+            "2022-09" ,
+            "2022-10" ,
+            "2022-11" ,
+            "2022-12" ,
+            "2023-01" ,
+            "2023-02" ,
+            "2023-03" ,
+            "2023-04" ,
+            "2023-05" ,
+            "2023-06" ,
+            "2023-07" ,
+            "2023-08" ,
+            "2023-09" ,
+            "2023-10" ,
+            "2023-11" ,
+            "2023-12" ,
+            "2024-01" ,
+            "2024-02" ,
+            "2024-03" ,
+            "2024-04" ,
+            "2024-05" ,
+            "2024-06" ,
+            "2024-07" ,
+            "2024-08" ,
+            "2024-09" ,
+            "2024-10" ,
+            "2024-11" ,
+            "2024-12" ,
+            "2025-01" ,
+            "2025-02" ,
+            "2025-03" ,
+            "2025-04" ,
+            "2025-05" ,
+            "2025-06" ,
+            "2025-07" ,
+            "2025-08" ,
+            "2025-09" ,
+            "2025-10" ,
+            "2025-11" ,
+            "2025-12" ,
+            "2026-01" ,
+            "2026-02" ,
+            "2026-03" ,
+            "2026-04" ,
+            "2026-05" ,
+            "2026-06" ,
+            "2026-07" ,
+            "2026-08" ,
+            "2026-09" ,
+            "2026-10" ,
+            "2026-11" ,
+            "2026-12" ,
+            "2027-01" ,
+            "2027-02" ,
+            "2027-03" ,
+            "2027-04" ,
+            "2027-05" ,
+            "2027-06" ,
+            "2027-07" ,
+            "2027-08" ,
+            "2027-09" ,
+            "2027-10" ,
+            "2027-11" ,
+            "2027-12" ,
+            "2028-01" ,
+            "2028-02" ,
+            "2028-03" ,
+            "2028-04" ,
+            "2028-05" ,
+            "2028-06" ,
+            "2028-07" ,
+            "2028-08" ,
+            "2028-09" ,
+            "2028-10" ,
+            "2028-11" ,
+            "2028-12" ,
+            "2029-01" ,
+            "2029-02" ,
+            "2029-03" ,
+            "2029-04" ,
+            "2029-05" ,
+            "2029-06" ,
+            "2029-07" ,
+            "2029-08" ,
+            "2029-09" ,
+            "2029-10" ,
+            "2029-11" ,
+            "2029-12" ,
+            "2030-01" ,
+            "2030-02" ,
+            "2030-03" ,
+            "2030-04" ,
+            "2030-05" ,
+            "2030-06" ,
+            "2030-07" ,
+            "2030-08" ,
+            "2030-09" ,
+            "2030-10" ,
+            "2030-11" ,
+            "2030-12" ,
+            "2031-01" ,
+            "2031-02" ,
+            "2031-03" ,
+            "2031-04" ,
+            "2031-05" ,
+            "2031-06" ,
+            "2031-07" ,
+            "2031-08" ,
+            "2031-09" ,
+            "2031-10" ,
+            "2031-11" ,
+            "2031-12" ,
+            "2032-01" ,
+            "2032-02" ,
+            "2032-03" ,
+            "2032-04" ,
+            "2032-05" ,
+            "2032-06" ,
+            "2032-07" ,
+            "2032-08" ,
+            "2032-09" ,
+            "2032-10" ,
+            "2032-11" ,
+            "2032-12" ,
+            "2033-01" ,
+            "2033-02" ,
+            "2033-03"
+        ];
+
         option = {
-            /*backgroundColor: "#0E233E",*/
-            "grid": {
-                "left": "6%",
-                "top": "18%",
-                "right": "3%",
-                "bottom": "15%"
+            tooltip: {
+                trigger: "axis",
+                axisPointer: {
+                    type: "shadow",
+                    textStyle: {
+                        color: "#fff"
+                    }
+
+                },
             },
-            "legend": {
-                "data": [
-                    "四川",
-                    "广西",
-                    "云南",
-                    "广东",
-                    "河南",
-                    "重庆",
-                    "湖南"
-                ],
-                "top": "92%",
-                "icon": "circle",
-                "textStyle": {
-                    "color": "#0DCAD2"
+            grid: {
+                borderWidth: 0,
+                top: 20,
+                bottom: 20,
+                textStyle: {
+                    color: "#fff"
                 }
             },
-            "color": [
-                "#534EE1",
-                "#ECD64F",
-                "#00E4F0",
-                "#44D16D",
-                "#124E91",
-                "#BDC414",
-                "#C8CCA5"
-            ],
-            "tooltip": {
-                "position": "top",
+            legend: {
+                x: '50%',
+                top: '0%',
+                textStyle: {
+                    color: '#90979c',
+                },
+                data: ['真实值', 'SARIMA模型预测']
             },
-            "xAxis": {
-                "type": "category",
-                "data": [
-                    "四川",
-                    "广西",
-                    "云南",
-                    "广东",
-                    "河南",
-                    "重庆",
-                    "湖南"
-                ],
-                "axisLabel": {
-                    "show": false,
-                    "color": "#999999",
-                    "fontSize": 16
+            calculable: true,
+            xAxis: [{
+                type: "category",
+                axisLine: {
+                    lineStyle: {
+                        color: "rgba(204,187,225,0.5)",
+                    }
                 },
-                "axisTick": {
-                    "show": false
+                splitLine: {
                 },
-                "axisLine": {
-                    "show": false
+                axisTick: {
+                    show: false
                 },
-                "splitLine": {
-                    "show": false
-                }
-            },
-            "yAxis": {
-                "type": "value",
-                "axisLabel": {
-                    "show": false,
-                    "color": "#999999",
-                    "fontSize": 16
+                data: xData,
+            }],
+
+            yAxis: [{
+                type: "value",
+                splitLine: {
+                    show: true
                 },
-                "axisTick": {
-                    "show": false
+                axisLine: {
+                    lineStyle: {
+                        color: "rgba(204,187,225,0.5)",
+                    }
                 },
-                "axisLine": {
-                    "show": false
+            }],
+            series: [{
+                name: "真实值",
+                type: "line",
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    color: "#4693EC",
                 },
-                "splitLine": {
-                    "show": false
-                }
-            },
-            "series": [{
-                "name": "四川",
-                "data": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ],
-                "stack": "a",
-                "type": "bar"
-            },
-                {
-                    "name": "广西",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "云南",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "广东",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "河南",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "重庆",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "name": "湖南",
-                    "data": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    "stack": "a",
-                    "type": "bar"
-                },
-                {
-                    "type": "pictorialBar",
-                    "name": "提示框值",
-                    "data": [{
-                        "name": "",
-                        "value": 7.74,
-                        "label": {
-                            "show": true,
-                            "position": "top",
-                            formatter: function (params) {
-                                var index = params.dataIndex;
-                                var str = "{a|" + params.value + "万}";
-                                return str;
-                            },
-                            "rich": {
-                                "a": {
-                                    "fontSize": 18,
-                                    "color": "#534EE1",
-                                    "align": "center",
-                                    "height": 40
-                                },
-                                "c": {
-                                    "fontSize": 18,
-                                    "color": "#fff",
-                                    "padding": [
-                                        -2,
-                                        0,
-                                        2,
-                                        0
-                                    ],
-                                    "backgroundColor": {
-                                        "image": labelimg
-                                    },
-                                    "align": "center",
-                                    "verticalAlign": "bottom",
-                                    "height": 50,
-                                    "lineHeight": 40,
-                                    "width": 100
-                                }
-                            }
-                        },
-                        "itemStyle": {
-                            "normal": {
-                                "color": {
-                                    "type": "linear",
-                                    "x": 0,
-                                    "y": 0,
-                                    "x2": 0,
-                                    "y2": 1,
-                                    "colorStops": [{
-                                        "offset": 0,
-                                        "color": "rgba(83,78,225,1)"
-                                    },
-                                        {
-                                            "offset": 1,
-                                            "color": "rgba(83,78,225,0)"
-                                        }
-                                    ],
-                                    "global": false
-                                }
+                markPoint: {
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#fff'
                             }
                         }
                     },
-                        {
-                            "name": "",
-                            "value": 5.35,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "万}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#ECD64F",
-                                        "align": "center",
-                                        "height": 40
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(236,214,79,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(236,214,79,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 4.63,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "万}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#00E4F0",
-                                        "align": "center",
-                                        "height": 40
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(0,228,240,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(0,228,240,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 3.11,
-                            "label": {
-                                "show": true,
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "万}";
-                                    return str;
-                                },
-                                "position": "top",
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#44D16D",
-                                        "align": "center",
-                                        "height": 40
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(68,209,109,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(68,209,109,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 2.42,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "万}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#124E91",
-                                        "align": "center",
-                                        "height": 30
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(18,78,145,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(18,78,145,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 2.21,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "万}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#BDC414",
-                                        "align": "center",
-                                        "height": 30
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(189,196,20,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(189,196,20,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "name": "",
-                            "value": 2.09,
-                            "label": {
-                                "show": true,
-                                "position": "top",
-                                formatter: function (params) {
-                                    var index = params.dataIndex;
-                                    var str = "{a|" + params.value + "万}";
-                                    return str;
-                                },
-                                "rich": {
-                                    "a": {
-                                        "fontSize": 18,
-                                        "color": "#C8CCA5",
-                                        "align": "center",
-                                        "height": 30
-                                    },
-                                    "c": {
-                                        "fontSize": 18,
-                                        "color": "#fff",
-                                        "padding": [
-                                            -4,
-                                            0,
-                                            8,
-                                            0
-                                        ],
-                                        "backgroundColor": {
-                                            "image": labelimg
-                                        },
-                                        "align": "center",
-                                        "verticalAlign": "bottom",
-                                        "height": 45,
-                                        "lineHeight": 40,
-                                        "width": 100
-                                    }
-                                }
-                            },
-                            "itemStyle": {
-                                "normal": {
-                                    "color": {
-                                        "type": "linear",
-                                        "x": 0,
-                                        "y": 0,
-                                        "x2": 0,
-                                        "y2": 1,
-                                        "colorStops": [{
-                                            "offset": 0,
-                                            "color": "rgba(200,204,165,1)"
-                                        },
-                                            {
-                                                "offset": 1,
-                                                "color": "rgba(200,204,165,0)"
-                                            }
-                                        ],
-                                        "global": false
-                                    }
-                                }
+                },
+                data: [
+                    0.0705,
+                    0.1553,
+                    0.2226,
+                    0.1926,
+                    0.2486,
+                    0.3002,
+                    0.3317,
+                    0.3019,
+                    0.3001,
+                    0.2605,
+                    0.3443,
+                    0.3835,
+                    0.1631,
+                    0.1261,
+                    0.2963,
+                    0.2625,
+                    0.2719,
+                    0.2868,
+                    0.2847,
+                    0.2728,
+                    0.2823,
+                    0.2334,
+                    0.3178,
+                    0.3252,
+                    0.1545,
+                    0.1579,
+                    0.2956,
+                    0.2311,
+                    0.264,
+                    0.3053,
+                    0.3052,
+                    0.2832,
+                    0.3277,
+                    0.2852,
+                    0.3220,
+                    0.3992,
+                    0.1818,
+                    0.1613,
+                    0.3016,
+                    0.3062,
+                    0.313,
+                    0.3638,
+                    0.3363,
+                    0.3057,
+                    0.355,
+                    0.2851,
+                    0.3653,
+                    0.4188,
+                    0.2,
+                    0.1833,
+                    0.3731,
+                    0.3241,
+                    0.3580,
+                    0.3674,
+                    0.3143,
+                    0.3162,
+                    0.3490,
+                    0.303,
+                    0.414,
+                    0.4621,
+                    0.17,
+                    0.2299,
+                    0.3615,
+                    0.2875,
+                    0.3523,
+                    0.415,
+                    0.3453,
+                    0.3787,
+                    0.3709,
+                    0.3172,
+                    0.4366,
+                    0.4799,
+                    0.2277,
+                    0.1773,
+                    0.3699,
+                    0.3232,
+                    0.3916,
+                    0.4050,
+                    0.3681,
+                    0.4026,
+                    0.4333,
+                    0.4107,
+                    0.5411,
+                    0.5684,
+                    0.2557,
+                    0.2500,
+                    0.4259,
+                    0.4408,
+                    0.4382,
+                    0.4645,
+                    0.4851,
+                    0.4487,
+                    0.4519,
+                    0.4352,
+                    0.5198,
+                    0.4822,
+                    0.1961,
+                    0.1516,
+                    0.3418,
+                    0.4237,
+                    0.3898,
+                    0.4916,
+                    0.4353,
+                    0.3672,
+                    0.3672,
+                    0.3232,
+                    0.4140,
+                    0.4626,
+                    0.2317,
+                    0.2169,
+                    0.4230,
+                    0.3756,
+                    0.3588,
+                    0.4250,
+                    0.2398,
+                    0.3348,
+                    0.3582,
+                    0.3808,
+                    0.4616,
+                    0.5325,
+                    0.2210,
+                    0.2391,
+                    0.3569,
+                    0.2727,
+                    0.3192,
+                    0.3999,
+                    0.3318,
+                    0.3326,
+                    0.3120,
+                    0.2818,
+                    0.3056,
+                    0.3742,
+                    0.1290,
+                    0.3210,
+                    0.4112,
+                ],
+            }, {
+                name: "SARIMA模型预测",
+                type: "line",
+                symbolSize: 10,
+                symbol: 'circle',
+                itemStyle: {
+                    color: "#00FFE3",
+                },
+                markPoint: {
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#fff'
                             }
                         }
-                    ],
-                    "stack": "a",
-                    "symbol": "path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z"
-                }
-            ]
+                    },
+                },
+                data: [
+                        ,,,,,,,,,,,,,,
+                    0.126783671,
+                    0.238266472,
+                    0.300293655,
+                    0.318962305,
+                    0.323602277,
+                    0.268566433,
+                    0.277407109,
+                    0.244584597,
+                    0.321945225,
+                    0.361032427,
+                    0.11947619,
+                    0.11326698,
+                    0.309650938,
+                    0.256772485,
+                    0.247152207,
+                    0.276279375,
+                    0.290894055,
+                    0.281226884,
+                    0.285143754,
+                    0.258447662,
+                    0.348045616,
+                    0.327491899,
+                    0.19983362,
+                    0.176269398,
+                    0.299920686,
+                    0.236836255,
+                    0.312040257,
+                    0.338898742,
+                    0.345519352,
+                    0.307810364,
+                    0.347424686,
+                    0.307912085,
+                    0.32838886,
+                    0.431631324,
+                    0.200354562,
+                    0.179068242,
+                    0.321694177,
+                    0.356494758,
+                    0.331781133,
+                    0.399016236,
+                    0.346970285,
+                    0.300483657,
+                    0.368584514,
+                    0.288587763,
+                    0.382718125,
+                    0.45537919,
+                    0.23344413,
+                    0.172949524,
+                    0.4080962,
+                    0.32444127,
+                    0.342695074,
+                    0.369675465,
+                    0.348317621,
+                    0.340904623,
+                    0.393123526,
+                    0.323466886,
+                    0.430605302,
+                    0.482574201,
+                    0.188015369,
+                    0.272029827,
+                    0.337842751,
+                    0.299214371,
+                    0.380325289,
+                    0.445624364,
+                    0.346542726,
+                    0.399211197,
+                    0.392268403,
+                    0.361837709,
+                    0.500958992,
+                    0.552352344,
+                    0.292138127,
+                    0.206439677,
+                    0.425927673,
+                    0.369999219,
+                    0.47613119,
+                    0.448220396,
+                    0.419315494,
+                    0.48892478,
+                    0.478418613,
+                    0.439209354,
+                    0.572702579,
+                    0.572046982,
+                    0.218789154,
+                    0.226770901,
+                    0.377428464,
+                    0.39842467,
+                    0.434215074,
+                    0.44089033,
+                    0.505874979,
+                    0.423411564,
+                    0.406177111,
+                    0.385869191,
+                    0.452085114,
+                    0.416070071,
+                    0.180035957,
+                    0.168678115,
+                    0.377694846,
+                    0.470731832,
+                    0.360480633,
+                    0.47158343,
+                    0.393329498,
+                    0.246116938,
+                    0.340902518,
+                    0.310642917,
+                    0.441947499,
+                    0.485975577,
+                    0.269708311,
+                    0.207811679,
+                    0.433828228,
+                    0.3335119,
+                    0.330075347,
+                    0.403652913,
+                    0.222535794,
+                    0.319855967,
+                    0.344500184,
+                    0.367802839,
+                    0.448952738,
+                    0.520048723,
+                    0.20869238,
+                    0.226887191,
+                    0.344659216,
+                    0.321286278,
+                    0.317860786,
+                    0.391444478,
+                    0.210330749,
+                    0.307652799,
+                    0.332298056,
+                    0.355601286,
+                    0.436751503,
+                    0.507847665,
+                    0.196491419,
+                    0.214686285,
+                    0.33245834,
+                    0.309085418,
+                    0.305659936,
+                    0.379243632,
+                    0.198129906,
+                    0.295451958,
+                    0.320097215,
+                    0.343400446,
+                    0.424550664,
+                    0.495646825,
+                    0.18429058,
+                    0.202485445,
+                    0.320257501,
+                    0.296884579,
+                    0.293459097,
+                    0.367042793,
+                    0.185929067,
+                    0.283251119,
+                    0.307896376,
+                    0.331199607,
+                    0.412349825,
+                    0.483445986,
+                    0.172089741,
+                    0.190284606,
+                    0.308056662,
+                    0.284683739,
+                    0.281258257,
+                    0.354841954,
+                    0.173728228,
+                    0.27105028,
+                    0.295695537,
+                    0.318998768,
+                    0.400148985,
+                    0.471245147,
+                    0.159888901,
+                    0.178083767,
+                    0.295855822,
+                    0.2724829,
+                    0.26905741,
+                    0.342641115,
+                    0.161527389,
+                    0.25884944,
+                    0.283494698,
+                    0.306797928,
+                    0.387948146,
+                    0.459044308,
+                    0.147688062,
+                    0.165882928,
+                    0.283654983,
+                    0.260282061,
+                    0.256856579,
+                    0.330440275,
+                    0.149326549,
+                    0.246648601,
+                    0.271293859,
+                    0.294597089,
+                    0.375747307,
+                    0.446843468,
+                    0.135487223,
+                    0.153682088,
+                    0.271454144,
+                    0.248081222,
+                    0.24465574,
+                    0.318239436,
+                    0.13712571,
+                    0.234447762,
+                    0.259093019,
+                    0.28239625,
+                    0.363546468,
+                    0.434642629,
+                    0.123286384,
+                    0.141481249,
+                    0.259253305,
+                    0.235880382,
+                    0.232454901,
+                    0.306038597,
+                    0.124924871,
+                    0.222246923,
+                    0.24689218,
+                    0.270195411,
+                    0.351345628,
+                    0.42244179,
+                    0.111085545,
+                    0.12928041,
+                    0.247052465,
+                    0.223679543,
+                    0.220254061,
+                    0.293837758,
+                    0.112724032,
+                    0.210046084,
+                    0.234691341,
+                    0.257994571,
+                    0.339144789,
+                    0.410240951,
+                    0.098884705,
+                    0.117079571,
+                    0.234851626,
+                    0.211478704,
+                    0.208053222,
+                    0.281636918,
+                    0.100523192,
+                    0.197845244,
+                    0.222490502,
+                    0.245793732,
+                    0.32694395,
+                    0.398040112,
+                    0.086683866,
+                    0.104878731,
+                    0.222650787,
+                ]
+            },]
         }
-        // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         window.addEventListener("resize", function () {
             myChart.resize();
@@ -2439,27 +2560,27 @@ $(function () {
                     },
                         {
                             name: '天津',
-                            value:1242
+                            value: 1242
                         },
                         {
                             name: '河北',
-                            value:2259
+                            value: 2259
                         },
                         {
                             name: '山西',
-                            value:3604
+                            value: 3604
                         },
                         {
                             name: '内蒙古',
-                            value:1100
+                            value: 1100
                         },
                         {
                             name: '辽宁',
-                            value:3057
+                            value: 3057
                         },
                         {
                             name: '吉林',
-                            value:1515
+                            value: 1515
                         },
                         {
                             name: '黑龙江',
@@ -2467,11 +2588,11 @@ $(function () {
                         },
                         {
                             name: '上海',
-                            value:8697
+                            value: 8697
                         },
                         {
                             name: '江苏',
-                            value:7600
+                            value: 7600
                         },
                         {
                             name: '浙江',
@@ -2479,11 +2600,11 @@ $(function () {
                         },
                         {
                             name: '安徽',
-                            value:5244
+                            value: 5244
                         },
                         {
                             name: '福建',
-                            value:3176
+                            value: 3176
                         },
                         {
                             name: '江西',
@@ -2495,19 +2616,19 @@ $(function () {
                         },
                         {
                             name: '河南',
-                            value:37826
+                            value: 37826
                         },
                         {
                             name: '湖北',
-                            value:6327
+                            value: 6327
                         },
                         {
                             name: '湖南',
-                            value:11152
+                            value: 11152
                         },
                         {
                             name: '广东',
-                            value:28766
+                            value: 28766
                         },
                         {
                             name: '广西',
@@ -2515,7 +2636,7 @@ $(function () {
                         },
                         {
                             name: '海南',
-                            value:862
+                            value: 862
                         },
                         {
                             name: '重庆',
@@ -2527,7 +2648,7 @@ $(function () {
                         },
                         {
                             name: '贵州',
-                            value:10301
+                            value: 10301
                         },
                         {
                             name: '云南',
@@ -2535,19 +2656,19 @@ $(function () {
                         },
                         {
                             name: '西藏',
-                            value:212
+                            value: 212
                         },
                         {
                             name: '陕西',
-                            value:2567
+                            value: 2567
                         },
                         {
                             name: '甘肃',
-                            value:1133
+                            value: 1133
                         },
                         {
                             name: '青海',
-                            value:165
+                            value: 165
                         },
                         {
                             name: '宁夏',
@@ -2555,7 +2676,7 @@ $(function () {
                         },
                         {
                             name: '新疆',
-                            value:16413
+                            value: 16413
                         }
                     ],
                     "label": {
