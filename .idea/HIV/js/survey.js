@@ -1585,7 +1585,7 @@ $(function () {
                                         offset: 1,
                                         color: 'rgba(147, 235, 248, .2)' // 100% 处的颜色
                                     }],
-                                    globalCoord: false // 缺省为 false
+                                    globalCoord: false // 缺为 false
                                 },
                                 shadowColor: 'rgba(128, 217, 248, 1)',
                                 // shadowColor: 'rgba(255, 255, 255, 1)',
@@ -1610,7 +1610,7 @@ $(function () {
                     /*backgroundColor: '#013954',*/
                     title:
                         [{
-                            text: '2012-2019各省全年艾滋病发病数',
+                            text: '2012-2019各全年艾滋病发病数',
                             subtext: '   ',
                             left: '30%',
                             top: '0%',
@@ -2287,350 +2287,277 @@ $(function () {
         var myChart = echarts.init(document.getElementById('chart2'));
         var all = {
             "options": [{
+                visualMap: {
+                    min: 0,
+                    max: 30000,
+                    right: '8%',
+                    top: '5%',
+                    calculable: true,
+                    inRange: {
+                        color: ['#e0ffff', '#006edd'] // 蓝绿
+                    },
+                },
                 "series": [{
-                    "center": [100, 38],
+                    left: "25%",
+                    top: "0%",
                     "data": [{
-                        "name": "青海",
-                        "value": 88.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#730000"
-                            },
-                            "normal": {
-                                "areaColor": "#730000"
-                            }
+                        name: '北京',
+                        value: 4643
+                    },
+                        {
+                            name: '天津',
+                            value: 1242
+                        },
+                        {
+                            name: '河北',
+                            value: 2259
+                        },
+                        {
+                            name: '山西',
+                            value: 3604
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 1100
+                        },
+                        {
+                            name: '辽宁',
+                            value: 3057
+                        },
+                        {
+                            name: '吉林',
+                            value: 1515
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 2449
+                        },
+                        {
+                            name: '上海',
+                            value: 8697
+                        },
+                        {
+                            name: '江苏',
+                            value: 7600
+                        },
+                        {
+                            name: '浙江',
+                            value: 10068
+                        },
+                        {
+                            name: '安徽',
+                            value: 5244
+                        },
+                        {
+                            name: '福建',
+                            value: 3176
+                        },
+                        {
+                            name: '江西',
+                            value: 3029
+                        },
+                        {
+                            name: '山东',
+                            value: 2906
+                        },
+                        {
+                            name: '河南',
+                            value: 37826
+                        },
+                        {
+                            name: '湖北',
+                            value: 6327
+                        },
+                        {
+                            name: '湖南',
+                            value: 11152
+                        },
+                        {
+                            name: '广东',
+                            value: 28766
+                        },
+                        {
+                            name: '广西',
+                            value: 43818
+                        },
+                        {
+                            name: '海南',
+                            value: 862
+                        },
+                        {
+                            name: '重庆',
+                            value: 12697
+                        },
+                        {
+                            name: '四川',
+                            value: 45030
+                        },
+                        {
+                            name: '贵州',
+                            value: 10301
+                        },
+                        {
+                            name: '云南',
+                            value: 52931
+                        },
+                        {
+                            name: '西藏',
+                            value: 212
+                        },
+                        {
+                            name: '陕西',
+                            value: 2567
+                        },
+                        {
+                            name: '甘肃',
+                            value: 1133
+                        },
+                        {
+                            name: '青海',
+                            value: 165
+                        },
+                        {
+                            name: '宁夏',
+                            value: 366
+                        },
+                        {
+                            name: '新疆',
+                            value: 16413
                         }
-                    }, {
-                        "name": "西藏",
-                        "value": 244.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#260707"
-                            },
-                            "normal": {
-                                "areaColor": "#260707"
-                            }
+                    ],
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2012
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 4643
+                    },
+                        {
+                            name: '天津',
+                            value:1242
+                        },
+                        {
+                            name: '河北',
+                            value:2259
+                        },
+                        {
+                            name: '山西',
+                            value:3604
+                        },
+                        {
+                            name: '内蒙古',
+                            value:1100
+                        },
+                        {
+                            name: '辽宁',
+                            value:3057
+                        },
+                        {
+                            name: '吉林',
+                            value:1515
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 2449
+                        },
+                        {
+                            name: '上海',
+                            value:8697
+                        },
+                        {
+                            name: '江苏',
+                            value:7600
+                        },
+                        {
+                            name: '浙江',
+                            value: 10068
+                        },
+                        {
+                            name: '安徽',
+                            value:5244
+                        },
+                        {
+                            name: '福建',
+                            value:3176
+                        },
+                        {
+                            name: '江西',
+                            value: 3029
+                        },
+                        {
+                            name: '山东',
+                            value: 2906
+                        },
+                        {
+                            name: '河南',
+                            value:37826
+                        },
+                        {
+                            name: '湖北',
+                            value:6327
+                        },
+                        {
+                            name: '湖南',
+                            value:11152
+                        },
+                        {
+                            name: '广东',
+                            value:28766
+                        },
+                        {
+                            name: '广西',
+                            value: 43818
+                        },
+                        {
+                            name: '海南',
+                            value:862
+                        },
+                        {
+                            name: '重庆',
+                            value: 12697
+                        },
+                        {
+                            name: '四川',
+                            value: 45030
+                        },
+                        {
+                            name: '贵州',
+                            value:10301
+                        },
+                        {
+                            name: '云南',
+                            value: 52931
+                        },
+                        {
+                            name: '西藏',
+                            value:212
+                        },
+                        {
+                            name: '陕西',
+                            value:2567
+                        },
+                        {
+                            name: '甘肃',
+                            value:1133
+                        },
+                        {
+                            name: '青海',
+                            value:165
+                        },
+                        {
+                            name: '宁夏',
+                            value: 366
+                        },
+                        {
+                            name: '新疆',
+                            value:16413
                         }
-                    }, {
-                        "name": "新疆",
-                        "value": 92.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#5b0000"
-                            },
-                            "normal": {
-                                "areaColor": "#5b0000"
-                            }
-                        }
-                    }, {
-                        "name": "重庆",
-                        "value": 63.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#b20101"
-                            },
-                            "normal": {
-                                "areaColor": "#b20101"
-                            }
-                        }
-                    }, {
-                        "name": "宁夏",
-                        "value": 44.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
-                        }
-                    }, {
-                        "name": "云南",
-                        "value": 64,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#b20101"
-                            },
-                            "normal": {
-                                "areaColor": "#b20101"
-                            }
-                        }
-                    }, {
-                        "name": "甘肃",
-                        "value": 64.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#b20101"
-                            },
-                            "normal": {
-                                "areaColor": "#b20101"
-                            }
-                        }
-                    }, {
-                        "name": "贵州",
-                        "value": 79.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#9e0101"
-                            },
-                            "normal": {
-                                "areaColor": "#9e0101"
-                            }
-                        }
-                    }, {
-                        "name": "辽宁",
-                        "value": 19.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "广西",
-                        "value": 29.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "四川",
-                        "value": 57.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#db0000"
-                            },
-                            "normal": {
-                                "areaColor": "#db0000"
-                            }
-                        }
-                    }, {
-                        "name": "吉林",
-                        "value": 30.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "黑龙江",
-                        "value": 27,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "上海",
-                        "value": 9.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "江西",
-                        "value": 31.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "广东",
-                        "value": 17.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "内蒙古",
-                        "value": 38.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "陕西",
-                        "value": 32.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "天津",
-                        "value": 6.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "湖南",
-                        "value": 34.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "福建",
-                        "value": 24.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "浙江",
-                        "value": 10.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "北京",
-                        "value": 7.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "海南",
-                        "value": 41.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
-                        }
-                    }, {
-                        "name": "河南",
-                        "value": 41.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
-                        }
-                    }, {
-                        "name": "湖北",
-                        "value": 27.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "安徽",
-                        "value": 26.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "江苏",
-                        "value": 11.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "山西",
-                        "value": 39.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "山东",
-                        "value": 15.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河北",
-                        "value": 23.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }],
+                    ],
                     "label": {
                         "emphasis": {
                             "show": false
@@ -2643,354 +2570,135 @@ $(function () {
                     "roam": false,
                     "type": "map"
                 }],
-                "title": {
-                    "text": "2006"
-                }
             }, {
+                //2013
                 "series": [{
-                    "center": [100, 38],
+                    "center": "center",
                     "data": [{
-                        "name": "青海",
-                        "value": 50.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
+                        name: '北京',
+                        value: 7202
+                    },
+                        {
+                            name: '天津',
+                            value: 1737
+                        },
+                        {
+                            name: '河北',
+                            value: 3057
+                        },
+                        {
+                            name: '山西',
+                            value: 4020
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 1610
+                        },
+                        {
+                            name: '辽宁',
+                            value: 5567
+                        },
+                        {
+                            name: '吉林',
+                            value: 2311
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 3216
+                        },
+                        {
+                            name: '上海',
+                            value: 10232
+                        },
+                        {
+                            name: '江苏',
+                            value: 9868
+                        },
+                        {
+                            name: '浙江',
+                            value: 10561
+                        },
+                        {
+                            name: '安徽',
+                            value: 6638
+                        },
+                        {
+                            name: '福建',
+                            value: 4071
+                        },
+                        {
+                            name: '江西',
+                            value: 4478
+                        },
+                        {
+                            name: '山东',
+                            value: 3786
+                        },
+                        {
+                            name: '河南',
+                            value: 40418
+                        },
+                        {
+                            name: '湖北',
+                            value: 7734
+                        },
+                        {
+                            name: '湖南',
+                            value: 12948
+                        },
+                        {
+                            name: '广东',
+                            value: 35433
+                        },
+                        {
+                            name: '广西',
+                            value: 56463
+                        },
+                        {
+                            name: '海南',
+                            value: 1128
+                        },
+                        {
+                            name: '重庆',
+                            value: 12997
+                        },
+                        {
+                            name: '四川',
+                            value: 55246
+                        },
+                        {
+                            name: '贵州',
+                            value: 13622
+                        },
+                        {
+                            name: '云南',
+                            value: 62955
+                        },
+                        {
+                            name: '西藏',
+                            value: 271
+                        },
+                        {
+                            name: '陕西',
+                            value: 3646
+                        },
+                        {
+                            name: '甘肃',
+                            value: 1452
+                        },
+                        {
+                            name: '青海',
+                            value: 406
+                        },
+                        {
+                            name: '宁夏',
+                            value: 617
+                        },
+                        {
+                            name: '新疆',
+                            value: 22561
                         }
-                    }, {
-                        "name": "新疆",
-                        "value": 62.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#b20101"
-                            },
-                            "normal": {
-                                "areaColor": "#b20101"
-                            }
-                        }
-                    }, {
-                        "name": "西藏",
-                        "value": 234.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#260707"
-                            },
-                            "normal": {
-                                "areaColor": "#260707"
-                            }
-                        }
-                    }, {
-                        "name": "重庆",
-                        "value": 35.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "宁夏",
-                        "value": 25.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "贵州",
-                        "value": 56.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#db0000"
-                            },
-                            "normal": {
-                                "areaColor": "#db0000"
-                            }
-                        }
-                    }, {
-                        "name": "云南",
-                        "value": 47.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
-                        }
-                    }, {
-                        "name": "广西",
-                        "value": 21.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "甘肃",
-                        "value": 41.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
-                        }
-                    }, {
-                        "name": "辽宁",
-                        "value": 15.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "黑龙江",
-                        "value": 21.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "上海",
-                        "value": 7.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "四川",
-                        "value": 39.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "吉林",
-                        "value": 27.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "湖南",
-                        "value": 30.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "江西",
-                        "value": 16.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "内蒙古",
-                        "value": 30.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "福建",
-                        "value": 16.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "广东",
-                        "value": 16.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "陕西",
-                        "value": 25.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "浙江",
-                        "value": 6.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "天津",
-                        "value": 7.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "北京",
-                        "value": 18.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "安徽",
-                        "value": 20.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河南",
-                        "value": 21.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "湖北",
-                        "value": 17.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "海南",
-                        "value": 21.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "江苏",
-                        "value": 9.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "山西",
-                        "value": 28.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "山东",
-                        "value": 12.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河北",
-                        "value": 11.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }],
+                    ],
                     "label": {
                         "emphasis": {
                             "show": false
@@ -3003,354 +2711,135 @@ $(function () {
                     "roam": false,
                     "type": "map"
                 }],
-                "title": {
-                    "text": "2008"
-                }
             }, {
+                //2014
                 "series": [{
-                    "center": [100, 38],
+                    "center": "center",
                     "data": [{
-                        "name": "青海",
-                        "value": 45.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
+                        name: '北京',
+                        value: 10183
+                    },
+                        {
+                            name: '天津',
+                            value: 2223
+                        },
+                        {
+                            name: '河北',
+                            value: 4207
+                        },
+                        {
+                            name: '山西',
+                            value: 4706
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 2183
+                        },
+                        {
+                            name: '辽宁',
+                            value: 7660
+                        },
+                        {
+                            name: '吉林',
+                            value: 3188
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 4193
+                        },
+                        {
+                            name: '上海',
+                            value: 12055
+                        },
+                        {
+                            name: '江苏',
+                            value: 12861
+                        },
+                        {
+                            name: '浙江',
+                            value: 12343
+                        },
+                        {
+                            name: '安徽',
+                            value: 8422
+                        },
+                        {
+                            name: '福建',
+                            value: 5429
+                        },
+                        {
+                            name: '江西',
+                            value: 5273
+                        },
+                        {
+                            name: '山东',
+                            value: 5052
+                        },
+                        {
+                            name: '河南',
+                            value: 43995
+                        },
+                        {
+                            name: '湖北',
+                            value: 9576
+                        },
+                        {
+                            name: '湖南',
+                            value: 16668
+                        },
+                        {
+                            name: '广东',
+                            value: 36553
+                        },
+                        {
+                            name: '广西',
+                            value: 64000
+                        },
+                        {
+                            name: '海南',
+                            value: 1382
+                        },
+                        {
+                            name: '重庆',
+                            value: 25590
+                        },
+                        {
+                            name: '四川',
+                            value: 66060
+                        },
+                        {
+                            name: '贵州',
+                            value: 15622
+                        },
+                        {
+                            name: '云南',
+                            value: 79915
+                        },
+                        {
+                            name: '西藏',
+                            value: 329
+                        },
+                        {
+                            name: '陕西',
+                            value: 5011
+                        },
+                        {
+                            name: '甘肃',
+                            value: 2004
+                        },
+                        {
+                            name: '青海',
+                            value: 696
+                        },
+                        {
+                            name: '宁夏',
+                            value: 802
+                        },
+                        {
+                            name: '新疆',
+                            value: 27373
                         }
-                    }, {
-                        "name": "西藏",
-                        "value": 174.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#260707"
-                            },
-                            "normal": {
-                                "areaColor": "#260707"
-                            }
-                        }
-                    }, {
-                        "name": "宁夏",
-                        "value": 29.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "新疆",
-                        "value": 43.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff1111"
-                            },
-                            "normal": {
-                                "areaColor": "#ff1111"
-                            }
-                        }
-                    }, {
-                        "name": "贵州",
-                        "value": 35.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "云南",
-                        "value": 37.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "重庆",
-                        "value": 23.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "甘肃",
-                        "value": 33.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "四川",
-                        "value": 22.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "广西",
-                        "value": 20.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "辽宁",
-                        "value": 12.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "黑龙江",
-                        "value": 21.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "吉林",
-                        "value": 28.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "上海",
-                        "value": 6.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "湖南",
-                        "value": 26.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "江西",
-                        "value": 11.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "内蒙古",
-                        "value": 35.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "陕西",
-                        "value": 17.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "福建",
-                        "value": 12.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "天津",
-                        "value": 9.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "浙江",
-                        "value": 7.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "广东",
-                        "value": 10.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "北京",
-                        "value": 13.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "安徽",
-                        "value": 21.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "海南",
-                        "value": 22.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "湖北",
-                        "value": 15.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河南",
-                        "value": 15.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "江苏",
-                        "value": 3.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "山西",
-                        "value": 14.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "山东",
-                        "value": 11.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河北",
-                        "value": 18.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }],
+                    ],
                     "label": {
                         "emphasis": {
                             "show": false
@@ -3363,354 +2852,135 @@ $(function () {
                     "roam": false,
                     "type": "map"
                 }],
-                "title": {
-                    "text": "2010"
-                }
             }, {
+                //2015
                 "series": [{
-                    "center": [100, 38],
+                    "center": "center",
                     "data": [{
-                        "name": "青海",
-                        "value": 36.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
+                        name: '北京',
+                        value: 13106
+                    },
+                        {
+                            name: '天津',
+                            value: 2857
+                        },
+                        {
+                            name: '河北',
+                            value: 5742
+                        },
+                        {
+                            name: '山西',
+                            value: 5886
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 2550
+                        },
+                        {
+                            name: '辽宁',
+                            value: 10069
+                        },
+                        {
+                            name: '吉林',
+                            value: 4120
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 5838
+                        },
+                        {
+                            name: '上海',
+                            value: 14114
+                        },
+                        {
+                            name: '江苏',
+                            value: 16190
+                        },
+                        {
+                            name: '浙江',
+                            value: 15468
+                        },
+                        {
+                            name: '安徽',
+                            value: 10635
+                        },
+                        {
+                            name: '福建',
+                            value: 6976
+                        },
+                        {
+                            name: '江西',
+                            value: 6985
+                        },
+                        {
+                            name: '山东',
+                            value: 6882
+                        },
+                        {
+                            name: '河南',
+                            value: 47116
+                        },
+                        {
+                            name: '湖北',
+                            value: 11634
+                        },
+                        {
+                            name: '湖南',
+                            value: 20335
+                        },
+                        {
+                            name: '广东',
+                            value: 41413
+                        },
+                        {
+                            name: '广西',
+                            value: 71097
+                        },
+                        {
+                            name: '海南',
+                            value: 1790
+                        },
+                        {
+                            name: '重庆',
+                            value: 25750
+                        },
+                        {
+                            name: '四川',
+                            value: 77777
+                        },
+                        {
+                            name: '贵州',
+                            value: 20686
+                        },
+                        {
+                            name: '云南',
+                            value: 87634
+                        },
+                        {
+                            name: '西藏',
+                            value: 537
+                        },
+                        {
+                            name: '陕西',
+                            value: 6750
+                        },
+                        {
+                            name: '甘肃',
+                            value: 2767
+                        },
+                        {
+                            name: '青海',
+                            value: 1100
+                        },
+                        {
+                            name: '宁夏',
+                            value: 1004
+                        },
+                        {
+                            name: '新疆',
+                            value: 28729
                         }
-                    }, {
-                        "name": "西藏",
-                        "value": 176.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#260707"
-                            },
-                            "normal": {
-                                "areaColor": "#260707"
-                            }
-                        }
-                    }, {
-                        "name": "宁夏",
-                        "value": 27.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "重庆",
-                        "value": 15.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "贵州",
-                        "value": 26.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "云南",
-                        "value": 28.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "甘肃",
-                        "value": 24.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "辽宁",
-                        "value": 7.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "四川",
-                        "value": 18.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "黑龙江",
-                        "value": 17.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "广西",
-                        "value": 17.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "吉林",
-                        "value": 16.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "江西",
-                        "value": 11.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "新疆",
-                        "value": 34.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "上海",
-                        "value": 2.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "内蒙古",
-                        "value": 20.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "陕西",
-                        "value": 10.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "福建",
-                        "value": 11.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "天津",
-                        "value": 9.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "湖南",
-                        "value": 19.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "浙江",
-                        "value": 4.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "广东",
-                        "value": 9.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "北京",
-                        "value": 6.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "海南",
-                        "value": 25.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "湖北",
-                        "value": 10.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "安徽",
-                        "value": 11.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河南",
-                        "value": 9.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "山西",
-                        "value": 11.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "江苏",
-                        "value": 1.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "山东",
-                        "value": 10.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "河北",
-                        "value": 10.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }],
+                    ],
                     "label": {
                         "emphasis": {
                             "show": false
@@ -3723,354 +2993,1013 @@ $(function () {
                     "roam": false,
                     "type": "map"
                 }],
-                "title": {
-                    "text": "2012"
-                }
             }, {
+                //2016
                 "series": [{
-                    "center": [100, 38],
+                    "center": "center",
                     "data": [{
-                        "name": "西藏",
-                        "value": 108.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#410000"
-                            },
-                            "normal": {
-                                "areaColor": "#410000"
-                            }
+                        name: '北京',
+                        value: 15668
+                    },
+                        {
+                            name: '天津',
+                            value: 3805
+                        },
+                        {
+                            name: '河北',
+                            value: 7236
+                        },
+                        {
+                            name: '山西',
+                            value: 5965
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 3273
+                        },
+                        {
+                            name: '辽宁',
+                            value: 12629
+                        },
+                        {
+                            name: '吉林',
+                            value: 5324
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 7587
+                        },
+                        {
+                            name: '上海',
+                            value: 16155
+                        },
+                        {
+                            name: '江苏',
+                            value: 17810
+                        },
+                        {
+                            name: '浙江',
+                            value: 19084
+                        },
+                        {
+                            name: '安徽',
+                            value: 12463
+                        },
+                        {
+                            name: '福建',
+                            value: 8975
+                        },
+                        {
+                            name: '江西',
+                            value: 8769
+                        },
+                        {
+                            name: '山东',
+                            value: 9115
+                        },
+                        {
+                            name: '河南',
+                            value: 50794
+                        },
+                        {
+                            name: '湖北',
+                            value: 14027
+                        },
+                        {
+                            name: '湖南',
+                            value: 24313
+                        },
+                        {
+                            name: '广东',
+                            value: 47139
+                        },
+                        {
+                            name: '广西',
+                            value: 73596
+                        },
+                        {
+                            name: '海南',
+                            value: 2251
+                        },
+                        {
+                            name: '重庆',
+                            value: 31092
+                        },
+                        {
+                            name: '四川',
+                            value: 92950
+                        },
+                        {
+                            name: '贵州',
+                            value: 25654
+                        },
+                        {
+                            name: '云南',
+                            value: 93437
+
+                        },
+                        {
+                            name: '西藏',
+                            value: 729
+                        },
+                        {
+                            name: '陕西',
+                            value: 8246
+                        },
+                        {
+                            name: '甘肃',
+                            value: 3674
+                        },
+                        {
+                            name: '青海',
+                            value: 1507
+                        },
+                        {
+                            name: '宁夏',
+                            value: 1281
+                        },
+                        {
+                            name: '新疆',
+                            value: 39840
                         }
-                    }, {
-                        "name": "青海",
-                        "value": 33.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
+                    ],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
                         }
-                    }, {
-                        "name": "宁夏",
-                        "value": 14.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2017
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 17476
+
+                    },
+                        {
+                            name: '天津',
+                            value: 3996
+
+                        },
+                        {
+                            name: '河北',
+                            value: 9221
+
+                        },
+                        {
+                            name: '山西',
+                            value: 7358
+
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 4056
+
+                        },
+                        {
+                            name: '辽宁',
+                            value: 14965
+
+                        },
+                        {
+                            name: '吉林',
+                            value: 6332
+
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 9276
+
+                        },
+                        {
+                            name: '上海',
+                            value: 18092
+
+                        },
+                        {
+                            name: '江苏',
+                            value: 21171
+
+                        },
+                        {
+                            name: '浙江',
+                            value: 22830
+
+                        },
+                        {
+                            name: '安徽',
+                            value: 14723
+
+                        },
+                        {
+                            name: '福建',
+                            value: 10951
+
+                        },
+                        {
+                            name: '江西',
+                            value: 11060
+
+                        },
+                        {
+                            name: '山东',
+                            value: 10808
+
+                        },
+                        {
+                            name: '河南',
+                            value: 54474
+
+                        },
+                        {
+                            name: '湖北',
+                            value: 16564
+
+                        },
+                        {
+                            name: '湖南',
+                            value: 29463
+
+                        },
+                        {
+                            name: '广东',
+                            value: 53639
+
+                        },
+                        {
+                            name: '广西',
+                            value: 80480
+
+                        },
+                        {
+                            name: '海南',
+                            value: 2692
+
+                        },
+                        {
+                            name: '重庆',
+                            value: 37000
+
+                        },
+                        {
+                            name: '四川',
+                            value: 110400
+
+                        },
+                        {
+                            name: '贵州',
+                            value: 31182
+
+                        },
+                        {
+                            name: '云南',
+                            value: 98878
+
+                        },
+                        {
+                            name: '西藏',
+                            value: 911
+
+                        },
+                        {
+                            name: '陕西',
+                            value: 10906
+
+                        },
+                        {
+                            name: '甘肃',
+                            value: 4629
+
+                        },
+                        {
+                            name: '青海',
+                            value: 1875
+
+                        },
+                        {
+                            name: '宁夏',
+                            value: 1625
+
+                        },
+                        {
+                            name: '新疆',
+                            value: 43484
+
                         }
-                    }, {
-                        "name": "重庆",
-                        "value": 18.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
+                    ],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
                         }
-                    }, {
-                        "name": "贵州",
-                        "value": 26.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2018
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 20457
+                    },
+                        {
+                            name: '天津',
+                            value: 4529
+                        },
+                        {
+                            name: '河北',
+                            value: 11221
+                        },
+                        {
+                            name: '山西',
+                            value: 8434
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 4753
+                        },
+                        {
+                            name: '辽宁',
+                            value: 17281
+                        },
+                        {
+                            name: '吉林',
+                            value: 7682
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 10834
+                        },
+                        {
+                            name: '上海',
+                            value: 20369
+                        },
+                        {
+                            name: '江苏',
+                            value: 24592
+                        },
+                        {
+                            name: '浙江',
+                            value: 26575
+                        },
+                        {
+                            name: '安徽',
+                            value: 17183
+                        },
+                        {
+                            name: '福建',
+                            value: 12725
+                        },
+                        {
+                            name: '江西',
+                            value: 14097
+                        },
+                        {
+                            name: '山东',
+                            value: 13870
+                        },
+                        {
+                            name: '河南',
+                            value: 58821
+                        },
+                        {
+                            name: '湖北',
+                            value: 19166
+                        },
+                        {
+                            name: '湖南',
+                            value: 33518
+                        },
+                        {
+                            name: '广东',
+                            value: 60324
+                        },
+                        {
+                            name: '广西',
+                            value: 86000
+                        },
+                        {
+                            name: '海南',
+                            value: 3229
+                        },
+                        {
+                            name: '重庆',
+                            value: 42000
+                        },
+                        {
+                            name: '四川',
+                            value: 140984
+                        },
+                        {
+                            name: '贵州',
+                            value: 37000
+                        },
+                        {
+                            name: '云南',
+                            value: 105600
+                        },
+                        {
+                            name: '西藏',
+                            value: 1147
+                        },
+                        {
+                            name: '陕西',
+                            value: 13129
+                        },
+                        {
+                            name: '甘肃',
+                            value: 5604
+                        },
+                        {
+                            name: '青海',
+                            value: 2206
+                        },
+                        {
+                            name: '宁夏',
+                            value: 1864
+                        },
+                        {
+                            name: '新疆',
+                            value: 49418
                         }
-                    }, {
-                        "name": "云南",
-                        "value": 22.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
+                    ],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
                         }
-                    }, {
-                        "name": "甘肃",
-                        "value": 19.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2019
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 22147
+                    },
+                        {
+                            name: '天津',
+                            value: 5180
+                        },
+                        {
+                            name: '河北',
+                            value: 13417
+                        },
+                        {
+                            name: '山西',
+                            value: 9325
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 5716
+                        },
+                        {
+                            name: '辽宁',
+                            value: 19427
+                        },
+                        {
+                            name: '吉林',
+                            value: 9012
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 12373
+                        },
+                        {
+                            name: '上海',
+                            value: 22378
+                        },
+                        {
+                            name: '江苏',
+                            value: 28361
+                        },
+                        {
+                            name: '浙江',
+                            value: 29765
+                        },
+                        {
+                            name: '安徽',
+                            value: 19604
+                        },
+                        {
+                            name: '福建',
+                            value: 14586
+                        },
+                        {
+                            name: '江西',
+                            value: 16586
+                        },
+                        {
+                            name: '山东',
+                            value: 16865
+                        },
+                        {
+                            name: '河南',
+                            value: 62924
+                        },
+                        {
+                            name: '湖北',
+                            value: 22285
+                        },
+                        {
+                            name: '湖南',
+                            value: 38597
+                        },
+                        {
+                            name: '广东',
+                            value: 66558
+                        },
+                        {
+                            name: '广西',
+                            value: 89956
+                        },
+                        {
+                            name: '海南',
+                            value: 3685
+                        },
+                        {
+                            name: '重庆',
+                            value: 48000
+                        },
+                        {
+                            name: '四川',
+                            value: 176482
+                        },
+                        {
+                            name: '贵州',
+                            value: 43000
+                        },
+                        {
+                            name: '云南',
+                            value: 111700
+                        },
+                        {
+                            name: '西藏',
+                            value: 1365
+                        },
+                        {
+                            name: '陕西',
+                            value: 15574
+                        },
+                        {
+                            name: '甘肃',
+                            value: 6675
+                        },
+                        {
+                            name: '青海',
+                            value: 2555
+                        },
+                        {
+                            name: '宁夏',
+                            value: 2112
+                        },
+                        {
+                            name: '新疆',
+                            value: 53671
                         }
-                    }, {
-                        "name": "四川",
-                        "value": 18.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
+                    ],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
                         }
-                    }, {
-                        "name": "江西",
-                        "value": 9.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2020
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 23270
+                    },
+                        {
+                            name: '天津',
+                            value: 5630
+                        },
+                        {
+                            name: '河北',
+                            value: 15178
+                        },
+                        {
+                            name: '山西',
+                            value: 10393
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 6067
+                        },
+                        {
+                            name: '辽宁',
+                            value: 20774
+                        },
+                        {
+                            name: '吉林',
+                            value: 9755
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 13342
+                        },
+                        {
+                            name: '上海',
+                            value: 23765
+                        },
+                        {
+                            name: '江苏',
+                            value: 31447
+                        },
+                        {
+                            name: '浙江',
+                            value: 32918
+                        },
+                        {
+                            name: '安徽',
+                            value: 21184
+                        },
+                        {
+                            name: '福建',
+                            value: 16414
+                        },
+                        {
+                            name: '江西',
+                            value: 18676
+                        },
+                        {
+                            name: '山东',
+                            value: 19157
+                        },
+                        {
+                            name: '河南',
+                            value: 65896
+                        },
+                        {
+                            name: '湖北',
+                            value: 23761
+                        },
+                        {
+                            name: '湖南',
+                            value: 43133
+                        },
+                        {
+                            name: '广东',
+                            value: 71235
+                        },
+                        {
+                            name: '广西',
+                            value: 97000
+                        },
+                        {
+                            name: '海南',
+                            value: 3869
+                        },
+                        {
+                            name: '重庆',
+                            value: 54000
+                        },
+                        {
+                            name: '四川',
+                            value: 204472
+                        },
+                        {
+                            name: '贵州',
+                            value: 46000
+                        },
+                        {
+                            name: '云南',
+                            value: 123451
+                        },
+                        {
+                            name: '西藏',
+                            value: 1458
+                        },
+                        {
+                            name: '陕西',
+                            value: 17488
+                        },
+                        {
+                            name: '甘肃',
+                            value: 7370
+                        },
+                        {
+                            name: '青海',
+                            value: 2800
+                        },
+                        {
+                            name: '宁夏',
+                            value: 2344
+                        },
+                        {
+                            name: '新疆',
+                            value: 61606
                         }
-                    }, {
-                        "name": "上海",
-                        "value": 5.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
+                    ],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
                         }
-                    }, {
-                        "name": "黑龙江",
-                        "value": 14.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2021
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 24435
+                    },
+                        {
+                            name: '天津',
+                            value: 6352
+                        },
+                        {
+                            name: '河北',
+                            value: 16304
+                        },
+                        {
+                            name: '山西',
+                            value: 11299
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 6715
+                        },
+                        {
+                            name: '辽宁',
+                            value: 23763
+                        },
+                        {
+                            name: '吉林',
+                            value: 10826
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 14373
+                        },
+                        {
+                            name: '上海',
+                            value: 34888
+                        },
+                        {
+                            name: '江苏',
+                            value: 35284
+                        },
+                        {
+                            name: '浙江',
+                            value: 36490
+                        },
+                        {
+                            name: '安徽',
+                            value: 23255
+                        },
+                        {
+                            name: '福建',
+                            value: 18748
+                        },
+                        {
+                            name: '江西',
+                            value: 21255
+                        },
+                        {
+                            name: '山东',
+                            value: 21900
+                        },
+                        {
+                            name: '河南',
+                            value: 68964
+                        },
+                        {
+                            name: '湖北',
+                            value: 26022
+                        },
+                        {
+                            name: '湖南',
+                            value: 47172
+                        },
+                        {
+                            name: '广东',
+                            value: 78229
+                        },
+                        {
+                            name: '广西',
+                            value: 104150
+                        },
+                        {
+                            name: '海南',
+                            value: 4100
+                        },
+                        {
+                            name: '重庆',
+                            value: 59375
+                        },
+                        {
+                            name: '四川',
+                            value: 247257
+                        },
+                        {
+                            name: '贵州',
+                            value: 50000
+                        },
+                        {
+                            name: '云南',
+                            value: 131633
+                        },
+                        {
+                            name: '西藏',
+                            value: 1629
+                        },
+                        {
+                            name: '陕西',
+                            value: 19625
+                        },
+                        {
+                            name: '甘肃',
+                            value: 8428
+                        },
+                        {
+                            name: '青海',
+                            value: 3121
+                        },
+                        {
+                            name: '宁夏',
+                            value: 2597
+                        },
+                        {
+                            name: '新疆',
+                            value: 67551
                         }
-                    }, {
-                        "name": "辽宁",
-                        "value": 10.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
+                    ],
+                    "label": {
+                        "emphasis": {
+                            "show": false
+                        },
+                        "normal": {
+                            "show": false
                         }
-                    }, {
-                        "name": "内蒙古",
-                        "value": 19.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
+                    },
+                    "mapType": "china",
+                    "roam": false,
+                    "type": "map"
+                }],
+            }, {
+                //2022
+                "series": [{
+                    "center": "center",
+                    "data": [{
+                        name: '北京',
+                        value: 26013
+                    },
+                        {
+                            name: '天津',
+                            value: 6855
+                        },
+                        {
+                            name: '河北',
+                            value: 17975
+                        },
+                        {
+                            name: '山西',
+                            value: 12768
+                        },
+                        {
+                            name: '内蒙古',
+                            value: 7362
+                        },
+                        {
+                            name: '辽宁',
+                            value: 21486
+                        },
+                        {
+                            name: '吉林',
+                            value: 11897
+                        },
+                        {
+                            name: '黑龙江',
+                            value: 15361
+                        },
+                        {
+                            name: '上海',
+                            value: 36558
+                        },
+                        {
+                            name: '江苏',
+                            value: 38851
+                        },
+                        {
+                            name: '浙江',
+                            value: 39452
+                        },
+                        {
+                            name: '安徽',
+                            value: 25326
+                        },
+                        {
+                            name: '福建',
+                            value: 20582
+                        },
+                        {
+                            name: '江西',
+                            value: 23325
+                        },
+                        {
+                            name: '山东',
+                            value: 24079
+                        },
+                        {
+                            name: '河南',
+                            value: 71745
+                        },
+                        {
+                            name: '湖北',
+                            value: 28313
+                        },
+                        {
+                            name: '湖南',
+                            value: 53030
+                        },
+                        {
+                            name: '广东',
+                            value: 84481
+                        },
+                        {
+                            name: '广西',
+                            value: 110259
+                        },
+                        {
+                            name: '海南',
+                            value: 4652
+                        },
+                        {
+                            name: '重庆',
+                            value: 64000
+                        },
+                        {
+                            name: '四川',
+                            value: 298996
+                        },
+                        {
+                            name: '贵州',
+                            value: 55150
+                        },
+                        {
+                            name: '云南',
+                            value: 139815
+                        },
+                        {
+                            name: '西藏',
+                            value: 1801
+                        },
+                        {
+                            name: '陕西',
+                            value: 21474
+                        },
+                        {
+                            name: '甘肃',
+                            value: 9387
+                        },
+                        {
+                            name: '青海',
+                            value: 3521
+                        },
+                        {
+                            name: '宁夏',
+                            value: 2849
+                        },
+                        {
+                            name: '新疆',
+                            value: 73495
                         }
-                    }, {
-                        "name": "福建",
-                        "value": 10.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "吉林",
-                        "value": 25.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff6b6b"
-                            },
-                            "normal": {
-                                "areaColor": "#ff6b6b"
-                            }
-                        }
-                    }, {
-                        "name": "湖南",
-                        "value": 14.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "天津",
-                        "value": 9.3,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "陕西",
-                        "value": 11.6,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "新疆",
-                        "value": 39.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff3636"
-                            },
-                            "normal": {
-                                "areaColor": "#ff3636"
-                            }
-                        }
-                    }, {
-                        "name": "广西",
-                        "value": 14.1,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "北京",
-                        "value": 7.7,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "浙江",
-                        "value": 5.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "海南",
-                        "value": 15,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "广东",
-                        "value": 8.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "湖北",
-                        "value": 9.0,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "安徽",
-                        "value": 11.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "河南",
-                        "value": 11.2,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "山西",
-                        "value": 14.4,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ff8e8e"
-                            },
-                            "normal": {
-                                "areaColor": "#ff8e8e"
-                            }
-                        }
-                    }, {
-                        "name": "江苏",
-                        "value": 1.9,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "河北",
-                        "value": 8.8,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }, {
-                        "name": "山东",
-                        "value": 9.5,
-                        "itemStyle": {
-                            "emphasis": {
-                                "areaColor": "#ffd9d9"
-                            },
-                            "normal": {
-                                "areaColor": "#ffd9d9"
-                            }
-                        }
-                    }],
+                    ],
                     "label": {
                         "emphasis": {
                             "show": false
@@ -4084,60 +4013,34 @@ $(function () {
                     "type": "map"
                 }],
             }],
-            "years": ["2006", "2008", "2010", "2012", "2014"]
+            "years": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"]
         };
 
         option = {
             baseOption: {
                 timeline: {
                     axisType: 'category',
-                    orient: 'vertical',
+                    orient: 'horizontal',
                     autoPlay: true,
-                    inverse: true,
-                    playInterval: 5000,
-                    left: 20,
-                    right: null,
-                    top: 20,
-                    bottom: 20,
-                    width: 65,
-                    height: null,
+                    inverse: false,
+                    playInterval: 1500,
+                    left: "0%",
+                    bottom: "0%",
+                    width: 500,
+                    loop: true,
                     label: {
                         normal: {
                             textStyle: {
-                                color: '#ddd'
+                                color: '#7c7c7c'
                             }
                         },
                         emphasis: {
                             textStyle: {
-                                color: '#fff'
+                                color: '#ffffff'
                             }
                         }
                     },
-                    symbolSize: 10,
-                    lineStyle: {
-                        color: '#555'
-                    },
-                    checkpointStyle: {
-                        borderColor: '#777',
-                        borderWidth: 1
-                    },
-                    controlStyle: {
-                        showNextBtn: true,
-                        showPrevBtn: true,
-                        normal: {
-                            color: '#666',
-                            borderColor: '#666'
-                        },
-                        emphasis: {
-                            color: '#aaa',
-                            borderColor: '#aaa'
-                        }
-                    },
                     data: all.years
-                },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: '{b}: {c}'
                 },
                 series: [],
                 animationDurationUpdate: 1000,
@@ -4513,8 +4416,247 @@ $(function () {
         myChart.setOption(option);
     }
 
+    //右中
     function ceshis8() {
-        // var myChart = echarts.init(document.getElementById('chart7'));
-        // myChart.setOption(optionXyMap01);
+        var myChart = echarts.init(document.getElementById('chart7'));
+        var hours = ["辽宁", "吉林", "黑龙江", "北京", "天津", "河北", "山西", "内蒙古", "上海", "江苏", "浙江", "安徽", "江西", "山东", "河南", "湖北", "湖南", "广东", "广西", "海南", "重庆", "四川", "贵州", "云南", "陕西", "甘肃", "青海", "宁夏", "新疆"];
+        var days = ["01_AE", "BC", "MAC", "B", "01B", "01BC", "C", "07_BC", "107", "55_01B", "08_BC", "79_0107", "65_cpx", "107_01B", "01C", "67_01B", "85_BC", "105_0108", "64_BC", "118_BC"];
+
+        var data = [
+            [0, 0, 95],
+            [0, 1, 0],
+            [0, 2, 0],
+            [0, 3, 0],
+            [0, 4, 0],
+            [0, 5, 0],
+            [0, 6, 0],
+            [0, 7, 1],
+            [0, 8, 1],
+            [0, 9, 1],
+            [0, 10, 1],
+            [0, 11, 1],
+            [0, 12, 1],
+            [0, 13, 1],
+            [0, 14, 1],
+            [0, 15, 1],
+            [0, 16, 1],
+            [0, 17, 1],
+            [0, 18, 1],
+            [0, 19, 1],
+
+            [1, 0, 63],
+            [1, 1, 2],
+            [1, 2, 0],
+            [1, 3, 11],
+            [1, 4, 0],
+            [1, 5, 1],
+            [1, 6, 17],
+            [1, 7, 3],
+            [1, 8, 0],
+            [1, 9, 0],
+            [1, 10, 0],
+            [1, 11, 0],
+            [1, 12, 1],
+            [1, 13, 0],
+            [1, 14, 0],
+            [1, 15, 0],
+            [1, 16, 0],
+            [1, 17, 0],
+            [1, 18, 0],
+            [1, 19, 0],
+
+            [2, 0, 79],
+            [2, 1, 0],
+            [2, 2, 0],
+            [2, 3, 7],
+            [2, 4, 0],
+            [2, 5, 0],
+            [2, 6, 2],
+            [2, 7, 7],
+            [2, 8, 0],
+            [2, 9, 0],
+            [2, 10, 1],
+            [2, 11, 0],
+            [2, 12, 0],
+            [2, 13, 2],
+            [2, 14, 1],
+            [2, 15, 0],
+            [2, 16, 0],
+            [2, 17, 0],
+            [2, 18, 0],
+            [2, 19, 0],
+
+            [3, 0, 45],
+            [3, 1, 24],
+            [3, 2, 12],
+            [3, 3, 10],
+            [3, 4, 3],
+            [3, 5, 1],
+            [3, 6, 1],
+            [3, 7, 1],
+            [3, 8, 0],
+            [3, 9, 0],
+            [3, 10, 0],
+            [3, 11, 0],
+            [3, 12, 0],
+            [3, 13, 0],
+            [3, 14, 0],
+            [3, 15, 0],
+            [3, 16, 0],
+            [3, 17, 0],
+            [3, 18, 0],
+            [3, 19, 0],
+
+            [4, 0, 64],
+            [4, 1, 0],
+            [4, 2, 0],
+            [4, 3, 3],
+            [4, 4, 3],
+            [4, 5, 0],
+            [4, 6, 0],
+            [4, 7, 23],
+            [4, 8, 3],
+            [4, 9, 2],
+            [4, 10, 0],
+            [4, 11, 0],
+            [4, 12, 0],
+            [4, 13, 0],
+            [4, 14, 0],
+            [4, 15, 0],
+            [4, 16, 0],
+            [4, 17, 0],
+            [4, 18, 0],
+            [4, 19, 0],
+
+            [5, 0, 53],
+            [5, 1, 0],
+            [5, 2, 0],
+            [5, 3, 20],
+            [5, 4, 3],
+            [5, 5, 2],
+            [5, 6, 1],
+            [5, 7, 16],
+            [5, 8, 0],
+            [5, 9, 0],
+            [5, 10, 1],
+            [5, 11, 0],
+            [5, 12, 0],
+            [5, 13, 0],
+            [5, 14, 0],
+            [5, 15, 0],
+            [5, 16, 0],
+            [5, 17, 0],
+            [5, 18, 0],
+            [5, 19, 0],
+
+            [6, 0, 45], [6, 1, 0], [6, 2, 0], [6, 3, 0], [6, 4, 0], [6, 5, 0], [6, 6, 0], [6, 7, 41], [6, 8, 0], [6, 9, 0], [6, 10, 0], [6, 11, 13], [6, 12, 0], [6, 13, 0], [6, 14, 0], [6, 15, 0], [6, 16, 0], [6, 17, 0], [6, 18, 0], [6, 19, 0],
+
+            [7, 0, 0], [7, 1, 0], [7, 2, 0], [7, 3, 0], [7, 4, 0], [7, 5, 0], [7, 6, 0], [7, 7, 100], [7, 8, 0], [7, 9, 0], [7, 10, 0], [7, 11, 0], [7, 12, 0], [7, 13, 0], [7, 14, 0], [7, 15, 0], [7, 16, 0], [7, 17, 0], [7, 18, 0], [7, 19, 0],
+
+            [8, 0, 58], [8, 1, 0], [8, 2, 0], [8, 3, 8], [8, 4, 3], [8, 5, 0], [8, 6, 0], [8, 7, 27], [8, 8, 0], [8, 9, 2], [8, 10, 0], [8, 11, 0], [8, 12, 0], [8, 13, 0], [8, 14, 0], [8, 15, 0], [8, 16, 0], [8, 17, 0], [8, 18, 0], [8, 19, 0],
+
+            [9, 0, 48], [9, 1, 8], [9, 2, 0], [9, 3, 4], [9, 4, 6], [9, 5, 3], [9, 6, 0], [9, 7, 23], [9, 8, 2], [9, 9, 0], [9, 10, 0], [9, 11, 0], [9, 12, 1], [9, 13, 0], [9, 14, 0], [9, 15, 2], [9, 16, 0], [9, 17, 0], [9, 18, 0], [9, 19, 0],
+
+            [10, 0, 52], [10, 1, 0], [10, 2, 0], [10, 3, 4], [10, 4, 0], [10, 5, 0], [10, 6, 0], [10, 7, 34], [10, 8, 2], [10, 9, 1], [10, 10, 3], [10, 11, 0], [10, 12, 0], [10, 13, 0], [10, 14, 0], [10, 15, 0], [10, 16, 0], [10, 17, 0], [10, 18, 0], [10, 19, 0],
+
+            [11, 0, 49], [11, 1, 10], [11, 2, 0], [11, 3, 19], [11, 4, 2], [11, 5, 1], [11, 6, 1], [11, 7, 12], [11, 8, 0], [11, 9, 1], [11, 10, 2], [11, 11, 0], [11, 12, 0], [11, 13, 0], [11, 14, 0], [11, 15, 0], [11, 16, 0], [11, 17, 0], [11, 18, 0], [11, 19, 0],
+
+            [12, 0, 0], [12, 1, 0], [12, 2, 0], [12, 3, 0], [12, 4, 0], [12, 5, 0], [12, 6, 0], [12, 7, 64], [12, 8, 0], [12, 9, 0], [12, 10, 0], [12, 11, 0], [12, 12, 0], [12, 13, 0], [12, 14, 0], [12, 15, 0], [12, 16, 0], [12, 17, 0], [12, 18, 0], [12, 19, 0],
+
+            [13, 0, 50], [13, 1, 0], [13, 2, 0], [13, 3, 0], [13, 4, 0], [13, 5, 0], [13, 6, 0], [13, 7, 50], [13, 8, 0], [13, 9, 0], [13, 10, 0], [13, 11, 0], [13, 12, 0], [13, 13, 0], [13, 14, 0], [13, 15, 0], [13, 16, 0], [13, 17, 0], [13, 18, 0], [13, 19, 0],
+
+            [14, 0, 29], [14, 1, 0], [14, 2, 0], [14, 3, 39], [14, 4, 4], [14, 5, 0], [14, 6, 7], [14, 7, 17], [14, 8, 0], [14, 9, 0], [14, 10, 0], [14, 11, 0], [14, 12, 0], [14, 13, 0], [14, 14, 0], [14, 15, 0], [14, 16, 0], [14, 17, 0], [14, 18, 0], [14, 19, 0],
+
+            [15, 0, 50], [15, 1, 5], [15, 2, 0], [15, 3, 8], [15, 4, 0], [15, 5, 2], [15, 6, 3], [15, 7, 22], [15, 8, 2], [15, 9, 5], [15, 10, 0], [15, 11, 0], [15, 12, 0], [15, 13, 0], [15, 14, 0], [15, 15, 0], [15, 16, 0], [15, 17, 0], [15, 18, 0], [15, 19, 0],
+
+            [16, 0, 68], [16, 1, 13], [16, 2, 0], [16, 3, 0], [16, 4, 10], [16, 5, 0], [16, 6, 0], [16, 7, 0], [16, 8, 0], [16, 9, 0], [16, 10, 0], [16, 11, 0], [16, 12, 0], [16, 13, 0], [16, 14, 0], [16, 15, 0], [16, 16, 0], [16, 17, 0], [16, 18, 0], [16, 19, 0],
+
+            [17, 0, 39], [17, 1, 2], [17, 2, 4], [17, 3, 2], [17, 4, 1], [17, 5, 2], [17, 6, 35], [17, 7, 0], [17, 8, 10], [17, 9, 2], [17, 10, 0], [17, 11, 0], [17, 12, 0], [17, 13, 0], [17, 14, 0], [17, 15, 0], [17, 16, 0], [17, 17, 0], [17, 18, 0], [17, 19, 0],
+
+            [18, 0, 49], [18, 1, 0], [18, 2, 0], [18, 3, 0], [18, 4, 2], [18, 5, 0], [18, 6, 0], [18, 7, 18], [18, 8, 0], [18, 9, 1], [18, 10, 25], [18, 11, 0], [18, 12, 0], [18, 13, 0], [18, 14, 0], [18, 15, 0], [18, 16, 0], [18, 17, 0], [18, 18, 0], [18, 19, 0],
+
+            [19, 0, 69], [19, 1, 0], [19, 2, 0], [19, 3, 1], [19, 4, 0], [19, 5, 0], [19, 6, 0], [19, 7, 17], [19, 8, 0], [19, 9, 4], [19, 10, 3], [19, 11, 0], [19, 12, 3], [19, 13, 0], [19, 14, 0], [19, 15, 0], [19, 16, 0], [19, 17, 0], [19, 18, 0], [19, 19, 0],
+
+            [20, 0, 10], [20, 1, 24], [20, 2, 0], [20, 3, 2], [20, 4, 2], [20, 5, 0], [20, 6, 0], [20, 7, 56], [20, 8, 0], [20, 9, 0], [20, 10, 5], [20, 11, 0], [20, 12, 0], [20, 13, 0], [20, 14, 0], [20, 15, 0], [20, 16, 0], [20, 17, 0], [20, 18, 0], [20, 19, 0],
+
+            [21, 0, 4], [21, 1, 4], [21, 2, 0], [21, 3, 0], [21, 4, 0], [21, 5, 0], [21, 6, 0], [21, 7, 9], [21, 8, 0], [21, 9, 0], [21, 10, 0], [21, 11, 0], [21, 12, 0], [21, 13, 0], [21, 14, 0], [21, 15, 0], [21, 16, 80], [21, 17, 3], [21, 18, 0], [21, 19, 0],
+
+            [22, 0, 0], [22, 1, 0], [22, 2, 0], [22, 3, 0], [22, 4, 0], [22, 5, 0], [22, 6, 0], [22, 7, 75], [22, 8, 25], [22, 9, 0], [22, 10, 0], [22, 11, 0], [22, 12, 0], [22, 13, 0], [22, 14, 0], [22, 15, 0], [22, 16, 0], [22, 17, 0], [22, 18, 0], [22, 19, 0],
+
+            [23, 0, 21], [23, 1, 10], [23, 2, 0], [23, 3, 2], [23, 4, 0], [23, 5, 0], [23, 6, 27], [23, 7, 13], [23, 8, 0], [23, 9, 0], [23, 10, 0], [23, 11, 0], [23, 12, 0], [23, 13, 0], [23, 14, 0], [23, 15, 0], [23, 16, 0], [23, 17, 0], [23, 18, 1], [23, 19, 1],
+
+            [24, 0, 37], [24, 1, 29], [24, 2, 0], [24, 3, 7], [24, 4, 1], [24, 5, 0], [24, 6, 8], [24, 7, 11], [24, 8, 0], [24, 9, 0], [24, 10, 0], [24, 11, 0], [24, 12, 0], [24, 13, 0], [24, 14, 0], [24, 15, 0], [24, 16, 0], [24, 17, 0], [24, 18, 0], [24, 19, 0],
+
+            [25, 0, 0], [25, 1, 0], [25, 2, 0], [25, 3, 0], [25, 4, 0], [25, 5, 0], [25, 6, 0], [25, 7, 100], [25, 8, 0], [25, 9, 0], [25, 10, 0], [25, 11, 0], [25, 12, 0], [25, 13, 0], [25, 14, 0], [25, 15, 0], [25, 16, 0], [25, 17, 0], [25, 18, 0], [25, 19, 0],
+
+            [26, 0, 0], [26, 1, 0], [26, 2, 0], [26, 3, 0], [26, 4, 0], [26, 5, 0], [26, 6, 0], [26, 7, 100], [26, 8, 0], [26, 9, 0], [26, 10, 0], [26, 11, 0], [26, 12, 0], [26, 13, 0], [26, 14, 0], [26, 15, 0], [26, 16, 0], [26, 17, 0], [26, 18, 0], [26, 19, 0],
+
+            [27, 0, 50], [27, 1, 0], [27, 2, 0], [27, 3, 0], [27, 4, 0], [27, 5, 0], [27, 6, 0], [27, 7, 50], [27, 8, 0], [27, 9, 0], [27, 10, 0], [27, 11, 0], [27, 12, 0], [27, 13, 0], [27, 14, 0], [27, 15, 0], [27, 16, 0], [27, 17, 0], [27, 18, 0], [27, 19, 0],
+
+            [28, 0, 2], [28, 1, 3], [28, 2, 0], [28, 3, 1], [28, 4, 1], [28, 5, 0], [28, 6, 0], [28, 7, 91], [28, 8, 0], [28, 9, 0], [28, 10, 0], [28, 11, 0], [28, 12, 0], [28, 13, 0], [28, 14, 0], [28, 15, 0], [28, 16, 0], [28, 17, 0], [28, 18, 0], [28, 19, 0]
+        ];
+
+
+        option = {
+            tooltip: {
+                position: 'top'
+            },
+            animation: false,
+            grid: {
+                height: '92%',
+                top: '0%',
+                left: '10%',
+                right: '5%'
+            },
+            xAxis: {
+                type: 'category',
+                data: hours,
+                splitArea: {
+                    show: true
+                },
+                axisTick: {
+                    lineStyle: {
+                        color: '#c4c4c4'
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: days,
+                splitArea: {
+                    show: true
+                },
+                axisTick: {
+                    show: false
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 100,
+                show: false,
+                color: ['#0d59b7', '#f8fafc']
+            },
+            tooltip: {
+                show: true,
+                formatter: function (params) {
+                    return '省份: ' + hours[params.value[0]] + '<br>毒株: ' + days[params.value[1]] + '<br>分布率: ' + params.value[2] + '%'; // 显示横纵坐标和数值
+                }
+            },
+            series: [{
+                name: '',
+                type: 'heatmap',
+                data: data,
+                label: {
+                    show: false
+                },
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        myChart.setOption(option);
     }
 });
